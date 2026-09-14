@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<meta name="theme-color" content="#08111d"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#08111d" name="theme-color"/>
 <title>Tempest's Mercy — Ship Inventory Log</title>
 <style>
 :root{--bg:#07101b;--bg2:#0b1625;--panel:#0f1d2d;--panel2:#132438;--line:#28405a;--text:#eef5fb;--muted:#9fb0c2;--gold:#e5b85b;--gold2:#f4d68d;--sea:#5ac8d8;--green:#6fdaa3;--red:#ff8d8d;--shadow:0 20px 60px rgba(0,0,0,.28);--radius:18px;--header-h:72px;}
@@ -31,632 +32,572 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 </style>
 </head>
 <body>
-<header class="topbar"><div class="topbar-inner"><div class="brand"><div class="crest">⚓</div><div class="brand-copy"><strong>The Calling of the Sea</strong><span>Ship inventory & print-ready ledger</span></div></div><nav aria-label="Campaign pages" class="workspace-tabs"><a href="index.html">Players Handbook</a><a href="characters.html">Playable Characters</a><a href="maps.html">Maps &amp; Locations</a><a href="sessions.html">Session Transcripts</a><a aria-current="page" class="active" href="inventory.html">Ship Inventory Log</a></nav></div></header>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><div class="crest">⚓</div><div class="brand-copy"><strong>The Calling of the Sea</strong><span>Ship inventory &amp; print-ready ledger</span></div></div><nav aria-label="Campaign pages" class="workspace-tabs"><a href="index.html">Players Handbook</a><a href="characters.html">Playable Characters</a><a href="maps.html">Maps &amp; Locations</a><a href="sessions.html">Session Transcripts</a><a aria-current="page" class="active" href="inventory.html">Ship Inventory Log</a><a class="dm-link" href="dm.html">DM Vault</a></nav></div></header>
 <div class="page">
-  <section class="hero">
-    <div class="hero-main card">
-      <div class="eyebrow">Tempest Vanguard • Working Ship Ledger</div>
-      <h1>Tempest's Mercy — Ship Inventory Log</h1>
-      <p>This page starts with the current Session 17 opening counts you locked in. Use the code <strong>1120</strong> to unlock editing, make updates during play, and save your version on the device/browser using local storage.</p>
-      <div class="hero-badges"><span>Printable</span><span>Mobile friendly</span><span>Code unlock: 1120</span><span>Saved in browser</span></div>
-      <div class="meta">
-        <div class="field"><label for="meta-captain">Captain</label><input id="meta-captain" value="Isla Drake" disabled/></div>
-        <div class="field"><label for="meta-session">Session</label><input id="meta-session" value="17" disabled/></div>
-        <div class="field"><label for="meta-date">Date</label><input id="meta-date" value="" placeholder="Enter date" disabled/></div>
-        <div class="field"><label for="meta-port">Port</label><input id="meta-port" value="" placeholder="Enter port/location" disabled/></div>
-      </div>
-    </div>
-    <aside class="controls card">
-      <div class="eyebrow">Editing Controls</div>
-      <h2 style="font-family:Georgia,serif;margin:8px 0 10px;font-size:24px">Manage this log</h2>
-      <p style="color:#c7d5e2;margin:0 0 14px">The file itself can't rewrite its own HTML on disk in a normal browser, but it <strong>can save your edits locally</strong> so the log stays updated on your phone or PC.</p>
-      <div id="lockPill" class="pill locked">🔒 Locked</div>
-      <div class="control-grid" style="margin-top:14px">
-        <button id="unlockBtn" class="primary" type="button" onclick="unlockInventory()">Unlock Editing</button>
-        <button id="saveBtn" type="button" onclick="saveInventory()">Save Changes</button>
-        <button type="button" onclick="window.print()">Print</button>
-        <button type="button" onclick="resetInventory()">Reset to Default</button>
-      </div>
-      <div class="notice" style="margin-top:16px"><strong>Tip:</strong> once unlocked, you can update session/date/port, quantities, condition, and notes. Your changes will persist in this browser until you reset them.</div>
-    </aside>
-  </section>
-
-  <section class="quick" id="quickCards">
-    <div class="qcard"><div class="label">Hull</div><div class="value" data-quick="Hull">100%</div><div class="small">Fully repaired and serviceable.</div></div>
-    <div class="qcard"><div class="label">Cannonballs</div><div class="value" data-quick="Cannonballs">21</div><div class="small">Current locked count.</div></div>
-    <div class="qcard"><div class="label">Food</div><div class="value" data-quick="Dry rations">12 days</div><div class="small">Locked current supply for present crew.</div></div>
-    <div class="qcard"><div class="label">Pigs</div><div class="value" data-quick-pigs>2 alive</div><div class="small">Henry + Bao.</div></div>
-  </section>
-
-  <div class="notice"><strong>DM bookkeeping note:</strong> the default numbers on this page reflect the current Session 17 starting ledger. Entries marked unknown or unverified are intentionally left unresolved until the table decides otherwise.</div>
-
-  
-    <section class="inventory-section">
-      <h2>Core</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Ship">
-          <td class="item">Ship</td>
-          <td class="canon">Tempest's Mercy</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Current through Session 16</textarea></td>
-        </tr>
-        
-        <tr data-item="Captain">
-          <td class="item">Captain</td>
-          <td class="canon">Isla Drake</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Active" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Isla Drake</textarea></td>
-        </tr>
-        
-        <tr data-item="Hull">
-          <td class="item">Hull</td>
-          <td class="canon">Repaired / serviceable. Session 15 repair crew fixed significant holes/damage for 30 gp; Session 16 later confirms the repair.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="100%" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Fully repaired" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>30 gp repair completed</textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-    <section class="inventory-section">
-      <h2>Weapons &amp; Ammunition</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Swivel guns">
-          <td class="item">Swivel guns</td>
-          <td class="canon">2</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="2" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Functional" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Cannonballs">
-          <td class="item">Cannonballs</td>
-          <td class="canon">Recommended current lock: 21 remaining from an original 24. 2 confirmed fired + 1 lost. Starting number was never established at the table.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="21" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Ready" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Locked from 24 starting; 2 fired + 1 lost</textarea></td>
-        </tr>
-        
-        <tr data-item="Fleet pistols">
-          <td class="item">Fleet pistols</td>
-          <td class="canon">10 total: 5 functional / 5 rusty or repair-needed.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="10" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="5 working / 5 repair" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Fleet muskets">
-          <td class="item">Fleet muskets</td>
-          <td class="canon">15 total: 3 functional / 12 broken.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="15" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="3 working / 12 broken" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Cutlasses">
-          <td class="item">Cutlasses</td>
-          <td class="canon">3 assorted</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="3" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Boarding axe">
-          <td class="item">Boarding axe</td>
-          <td class="canon">1</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Additional longswords">
-          <td class="item">Additional longswords</td>
-          <td class="canon">6 were stripped from enemies in Session 6 with intent to sell; whether all six remain aboard was never locked.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="6?" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Unverified" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Last confirmed: 6 taken for resale</textarea></td>
-        </tr>
-        
-        <tr data-item="Gunpowder / cannon powder">
-          <td class="item">Gunpowder / cannon powder</td>
-          <td class="canon">Present, but no starting quantity was ever recorded.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="Unknown" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Needs count" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>No exact quantity was ever established</textarea></td>
-        </tr>
-        
-        <tr data-item="Goblin bombs">
-          <td class="item">Goblin bombs</td>
-          <td class="canon">2 bludgeoning/shrapnel-style bombs recovered in Session 9; no later confirmed use found.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="2" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Ready" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>No confirmed use since recovery</textarea></td>
-        </tr>
-        
-        <tr data-item="Net launcher">
-          <td class="item">Net launcher</td>
-          <td class="canon">1 launcher; 1 net shot remaining when recovered.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Functional" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>1 net shot remaining</textarea></td>
-        </tr>
-        
-        <tr data-item="Weapon-cleaning kits">
-          <td class="item">Weapon-cleaning kits</td>
-          <td class="canon">None specifically acquired / recorded.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="None" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-    <section class="inventory-section">
-      <h2>Food &amp; Drink</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Dry rations">
-          <td class="item">Dry rations</td>
-          <td class="canon">Exact quantity unknown because Session 7 resupply had no number. Recommended current lock: 10–14 days for the current crew.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="12 days" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Usable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>DM bookkeeping lock for current crew</textarea></td>
-        </tr>
-        
-        <tr data-item="Fresh deer meat">
-          <td class="item">Fresh deer meat</td>
-          <td class="canon">Kaelis's deer; partially consumed by Session 14 as deer steaks. Small remainder / nearly gone.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="2 meals" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Use soon" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Remaining from Kaelis's deer</textarea></td>
-        </tr>
-        
-        <tr data-item="Henry">
-          <td class="item">Henry</td>
-          <td class="canon">Alive pig — pet / friend.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Alive / healthy" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Pet pig</textarea></td>
-        </tr>
-        
-        <tr data-item="Bao">
-          <td class="item">Bao</td>
-          <td class="canon">Alive pig — theoretically food; still alive.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Alive / healthy" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Food pig... technically</textarea></td>
-        </tr>
-        
-        <tr data-item="Pig feed">
-          <td class="item">Pig feed</td>
-          <td class="canon">Original one-week straw/feed supply should be considered consumed. Replacement amount not tracked.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="Unknown" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Needs restock/count" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Original one-week feed is long gone</textarea></td>
-        </tr>
-        
-        <tr data-item="Fresh water">
-          <td class="item">Fresh water</td>
-          <td class="canon">Originally 6 barrels and explicitly replenished in Session 7; current exact barrel count unknown.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="5 barrels" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>DM bookkeeping lock</textarea></td>
-        </tr>
-        
-        <tr data-item="Rum">
-          <td class="item">Rum</td>
-          <td class="canon">Originally 4 barrels; exact consumption not tracked.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="3 barrels" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>DM bookkeeping lock</textarea></td>
-        </tr>
-        
-        <tr data-item="Ale">
-          <td class="item">Ale</td>
-          <td class="canon">Originally 2 barrels; exact consumption not tracked.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1.5 barrels" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>DM bookkeeping lock</textarea></td>
-        </tr>
-        
-        <tr data-item="Grapefruits">
-          <td class="item">Grapefruits</td>
-          <td class="canon">Gone / removed from ship in Session 14.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Removed" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Cleared from ship in Session 14</textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-    <section class="inventory-section">
-      <h2>Medical</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Bandages">
-          <td class="item">Bandages</td>
-          <td class="canon">Aboard originally; exact consumption not tracked.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="~75%" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Usable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Approximate medical stock</textarea></td>
-        </tr>
-        
-        <tr data-item="Antiseptic herbs">
-          <td class="item">Antiseptic herbs</td>
-          <td class="canon">Aboard originally; exact consumption not tracked.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="~75%" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Usable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Approximate medical stock</textarea></td>
-        </tr>
-        
-        <tr data-item="Surgical tools">
-          <td class="item">Surgical tools</td>
-          <td class="canon">1 basic set / collection.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1 set" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Needles">
-          <td class="item">Needles</td>
-          <td class="canon">Originally 25.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="25" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>No confirmed losses tracked</textarea></td>
-        </tr>
-        
-        <tr data-item="Thread">
-          <td class="item">Thread</td>
-          <td class="canon">Originally 6 spools.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="6 spools" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>No confirmed losses tracked</textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-    <section class="inventory-section">
-      <h2>Repair &amp; Sail</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Hammers">
-          <td class="item">Hammers</td>
-          <td class="canon">Aboard; exact count not separately stated.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="Unknown" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Exact count never stated</textarea></td>
-        </tr>
-        
-        <tr data-item="Chisels">
-          <td class="item">Chisels</td>
-          <td class="canon">Aboard; exact count not separately stated.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="Unknown" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Exact count never stated</textarea></td>
-        </tr>
-        
-        <tr data-item="Saws">
-          <td class="item">Saws</td>
-          <td class="canon">2</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="2" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Nails">
-          <td class="item">Nails</td>
-          <td class="canon">1 box; original count contradictory in transcript, so quantity remains unresolved.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1 box" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Partial" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Exact nail count unresolved</textarea></td>
-        </tr>
-        
-        <tr data-item="Rope">
-          <td class="item">Rope</td>
-          <td class="canon">Originally 2 bundles; use over the campaign was not consistently tracked.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1.5 bundles" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>DM bookkeeping lock</textarea></td>
-        </tr>
-        
-        <tr data-item="Black tar">
-          <td class="item">Black tar</td>
-          <td class="canon">Originally 1 bucket.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0.5 bucket" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Usable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>DM bookkeeping lock</textarea></td>
-        </tr>
-        
-        <tr data-item="Sailcloth patches">
-          <td class="item">Sailcloth patches</td>
-          <td class="canon">Originally 5, roughly 12 × 12 in.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="3" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>DM bookkeeping lock</textarea></td>
-        </tr>
-        
-        <tr data-item="Whetstones / material">
-          <td class="item">Whetstones / material</td>
-          <td class="canon">Present, but original exact quantity disputed.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="Present" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Usable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Exact quantity disputed</textarea></td>
-        </tr>
-        
-        <tr data-item="Blade oil">
-          <td class="item">Blade oil</td>
-          <td class="canon">Present.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="Present" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Usable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-    <section class="inventory-section">
-      <h2>Storage &amp; Misc.</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Gambling dice">
-          <td class="item">Gambling dice</td>
-          <td class="canon">Present.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1 set+" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Playing cards">
-          <td class="item">Playing cards</td>
-          <td class="canon">Present.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1 deck+" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Spare clothing / laundry">
-          <td class="item">Spare clothing / laundry</td>
-          <td class="canon">Present.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="Present" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Usable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Utility knife">
-          <td class="item">Utility knife</td>
-          <td class="canon">1</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Carved trinkets">
-          <td class="item">Carved trinkets</td>
-          <td class="canon">3</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="3" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Good" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Finnegan's steel safe">
-          <td class="item">Finnegan's steel safe</td>
-          <td class="canon">Roughly 300 lb; brought aboard and used as storage. Original 350 gp is no longer treated as untouched safe contents.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Serviceable" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>~300 lb; used as storage</textarea></td>
-        </tr>
-        
-        <tr data-item="Bag of Beans">
-          <td class="item">Bag of Beans</td>
-          <td class="canon">6 originally. No confirmed bean detonation/use; later ledger notes one carried in GUTR's bandana. Likely 6 total unless used off-record.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="6" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Secured" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Treat as volatile / dangerous</textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-    <section class="inventory-section">
-      <h2>Relics &amp; Special</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Frying Dutch Pan compass">
-          <td class="item">Frying Dutch Pan compass</td>
-          <td class="canon">Associated with the shipbound ghost; points toward deep desire, past roots, or personal truth.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Active" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Caederick's engraved compass">
-          <td class="item">Caederick's engraved compass</td>
-          <td class="canon">Separate item from the Frying Dutch Pan compass.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Present" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="Old Agile Fleet flags / imagery">
-          <td class="item">Old Agile Fleet flags / imagery</td>
-          <td class="canon">Removed when the Tempest Vanguard claimed its identity.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Removed" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled></textarea></td>
-        </tr>
-        
-        <tr data-item="New Tempest's Mercy flag">
-          <td class="item">New Tempest's Mercy flag</td>
-          <td class="canon">Commissioned from Jeremy; not confirmed picked up yet.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0 aboard" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Pending pickup" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Commissioned; not confirmed collected</textarea></td>
-        </tr>
-        
-        <tr data-item="Fire-resistant captain curtains">
-          <td class="item">Fire-resistant captain curtains</td>
-          <td class="canon">Commissioned; not confirmed picked up yet.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0 aboard" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Pending pickup" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Commissioned; not confirmed collected</textarea></td>
-        </tr>
-        
-        <tr data-item="Isla's new black / purple cloak">
-          <td class="item">Isla's new black / purple cloak</td>
-          <td class="canon">Commissioned; not confirmed picked up yet.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0 aboard" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Pending pickup" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Commissioned; not confirmed collected</textarea></td>
-        </tr>
-        
-        <tr data-item="Old fire-resistant cloak">
-          <td class="item">Old fire-resistant cloak</td>
-          <td class="canon">Destroyed / consumed in Session 15.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="0" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Destroyed" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Consumed in Session 15</textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-    <section class="inventory-section">
-      <h2>Crew, Animals &amp; Companions</h2>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:18%">Item</th>
-            <th style="width:40%">Current Canon / Starting State</th>
-            <th style="width:11%">Qty Now</th>
-            <th style="width:13%">Condition</th>
-            <th style="width:18%">Notes / Change</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr data-item="Garry the VIII">
-          <td class="item">Garry the VIII</td>
-          <td class="canon">Isla's rat; aboard whenever Isla has him.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Active" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Isla's rat</textarea></td>
-        </tr>
-        
-        <tr data-item="Heraldr">
-          <td class="item">Heraldr</td>
-          <td class="canon">Kaelis's magical sentimental cat companion.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Active" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Kaelis's magical cat</textarea></td>
-        </tr>
-        
-        <tr data-item="Bob / transformed cat">
-          <td class="item">Bob / transformed cat</td>
-          <td class="canon">Session 16 companion; raccoon transformed into a cat.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Active" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>Transformed in Session 16</textarea></td>
-        </tr>
-        
-        <tr data-item="Frying Dutch Pan">
-          <td class="item">Frying Dutch Pan</td>
-          <td class="canon">Ghost associated with the Tempest's Mercy; consumes no rations.</td>
-          <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" type="text" value="1 ghost" disabled></td>
-          <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" type="text" value="Active" disabled></td>
-          <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" rows="2" disabled>No ration use</textarea></td>
-        </tr>
-        </tbody>
-      </table>
-      </div>
-    </section>
-    
-
-  <p class="footer-note">If you upload this page to GitHub Pages or open it locally, the inventory edits save in that browser/device through localStorage. If you want a hard backup, use your browser's “Save page” or print-to-PDF after updating it.</p>
+<section class="hero">
+<div class="hero-main card">
+<div class="eyebrow">Tempest Vanguard • Working Ship Ledger</div>
+<h1>Tempest's Mercy — Ship Inventory Log</h1>
+<p>This page starts with the current Session 17 opening counts you locked in. Use the code <strong>1120</strong> to unlock editing, make updates during play, and save your version on the device/browser using local storage.</p>
+<div class="hero-badges"><span>Printable</span><span>Mobile friendly</span><span>Code unlock: 1120</span><span>Saved in browser</span></div>
+<div class="meta">
+<div class="field"><label for="meta-captain">Captain</label><input disabled="" id="meta-captain" value="Isla Drake"/></div>
+<div class="field"><label for="meta-session">Session</label><input disabled="" id="meta-session" value="17"/></div>
+<div class="field"><label for="meta-date">Date</label><input disabled="" id="meta-date" placeholder="Enter date" value=""/></div>
+<div class="field"><label for="meta-port">Port</label><input disabled="" id="meta-port" placeholder="Enter port/location" value=""/></div>
+</div>
+</div>
+<aside class="controls card">
+<div class="eyebrow">Editing Controls</div>
+<h2 style="font-family:Georgia,serif;margin:8px 0 10px;font-size:24px">Manage this log</h2>
+<p style="color:#c7d5e2;margin:0 0 14px">The file itself can't rewrite its own HTML on disk in a normal browser, but it <strong>can save your edits locally</strong> so the log stays updated on your phone or PC.</p>
+<div class="pill locked" id="lockPill">🔒 Locked</div>
+<div class="control-grid" style="margin-top:14px">
+<button class="primary" id="unlockBtn" onclick="unlockInventory()" type="button">Unlock Editing</button>
+<button id="saveBtn" onclick="saveInventory()" type="button">Save Changes</button>
+<button onclick="window.print()" type="button">Print</button>
+<button onclick="resetInventory()" type="button">Reset to Default</button>
+</div>
+<div class="notice" style="margin-top:16px"><strong>Tip:</strong> once unlocked, you can update session/date/port, quantities, condition, and notes. Your changes will persist in this browser until you reset them.</div>
+</aside>
+</section>
+<section class="quick" id="quickCards">
+<div class="qcard"><div class="label">Hull</div><div class="value" data-quick="Hull">100%</div><div class="small">Fully repaired and serviceable.</div></div>
+<div class="qcard"><div class="label">Cannonballs</div><div class="value" data-quick="Cannonballs">21</div><div class="small">Current locked count.</div></div>
+<div class="qcard"><div class="label">Food</div><div class="value" data-quick="Dry rations">12 days</div><div class="small">Locked current supply for present crew.</div></div>
+<div class="qcard"><div class="label">Pigs</div><div class="value" data-quick-pigs="">2 alive</div><div class="small">Henry + Bao.</div></div>
+</section>
+<div class="notice"><strong>DM bookkeeping note:</strong> the default numbers on this page reflect the current Session 17 starting ledger. Entries marked unknown or unverified are intentionally left unresolved until the table decides otherwise.</div>
+<section class="inventory-section">
+<h2>Core</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Ship">
+<td class="item">Ship</td>
+<td class="canon">Tempest's Mercy</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Current through Session 16</textarea></td>
+</tr>
+<tr data-item="Captain">
+<td class="item">Captain</td>
+<td class="canon">Isla Drake</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Active"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Isla Drake</textarea></td>
+</tr>
+<tr data-item="Hull">
+<td class="item">Hull</td>
+<td class="canon">Repaired / serviceable. Session 15 repair crew fixed significant holes/damage for 30 gp; Session 16 later confirms the repair.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="100%"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Fully repaired"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">30 gp repair completed</textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="inventory-section">
+<h2>Weapons &amp; Ammunition</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Swivel guns">
+<td class="item">Swivel guns</td>
+<td class="canon">2</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="2"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Functional"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Cannonballs">
+<td class="item">Cannonballs</td>
+<td class="canon">Recommended current lock: 21 remaining from an original 24. 2 confirmed fired + 1 lost. Starting number was never established at the table.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="21"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Ready"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Locked from 24 starting; 2 fired + 1 lost</textarea></td>
+</tr>
+<tr data-item="Fleet pistols">
+<td class="item">Fleet pistols</td>
+<td class="canon">10 total: 5 functional / 5 rusty or repair-needed.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="10"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="5 working / 5 repair"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Fleet muskets">
+<td class="item">Fleet muskets</td>
+<td class="canon">15 total: 3 functional / 12 broken.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="15"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="3 working / 12 broken"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Cutlasses">
+<td class="item">Cutlasses</td>
+<td class="canon">3 assorted</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="3"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Boarding axe">
+<td class="item">Boarding axe</td>
+<td class="canon">1</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Additional longswords">
+<td class="item">Additional longswords</td>
+<td class="canon">6 were stripped from enemies in Session 6 with intent to sell; whether all six remain aboard was never locked.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="6?"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Unverified"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Last confirmed: 6 taken for resale</textarea></td>
+</tr>
+<tr data-item="Gunpowder / cannon powder">
+<td class="item">Gunpowder / cannon powder</td>
+<td class="canon">Present, but no starting quantity was ever recorded.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Unknown"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Needs count"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">No exact quantity was ever established</textarea></td>
+</tr>
+<tr data-item="Goblin bombs">
+<td class="item">Goblin bombs</td>
+<td class="canon">2 bludgeoning/shrapnel-style bombs recovered in Session 9; no later confirmed use found.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="2"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Ready"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">No confirmed use since recovery</textarea></td>
+</tr>
+<tr data-item="Net launcher">
+<td class="item">Net launcher</td>
+<td class="canon">1 launcher; 1 net shot remaining when recovered.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Functional"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">1 net shot remaining</textarea></td>
+</tr>
+<tr data-item="Weapon-cleaning kits">
+<td class="item">Weapon-cleaning kits</td>
+<td class="canon">None specifically acquired / recorded.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="None"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="inventory-section">
+<h2>Food &amp; Drink</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Dry rations">
+<td class="item">Dry rations</td>
+<td class="canon">Exact quantity unknown because Session 7 resupply had no number. Recommended current lock: 10–14 days for the current crew.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="12 days"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock for current crew</textarea></td>
+</tr>
+<tr data-item="Fresh deer meat">
+<td class="item">Fresh deer meat</td>
+<td class="canon">Kaelis's deer; partially consumed by Session 14 as deer steaks. Small remainder / nearly gone.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="2 meals"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Use soon"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Remaining from Kaelis's deer</textarea></td>
+</tr>
+<tr data-item="Henry">
+<td class="item">Henry</td>
+<td class="canon">Alive pig — pet / friend.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Alive / healthy"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Pet pig</textarea></td>
+</tr>
+<tr data-item="Bao">
+<td class="item">Bao</td>
+<td class="canon">Alive pig — theoretically food; still alive.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Alive / healthy"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Food pig... technically</textarea></td>
+</tr>
+<tr data-item="Pig feed">
+<td class="item">Pig feed</td>
+<td class="canon">Original one-week straw/feed supply should be considered consumed. Replacement amount not tracked.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Unknown"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Needs restock/count"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Original one-week feed is long gone</textarea></td>
+</tr>
+<tr data-item="Fresh water">
+<td class="item">Fresh water</td>
+<td class="canon">Originally 6 barrels and explicitly replenished in Session 7; current exact barrel count unknown.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="5 barrels"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock</textarea></td>
+</tr>
+<tr data-item="Rum">
+<td class="item">Rum</td>
+<td class="canon">Originally 4 barrels; exact consumption not tracked.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="3 barrels"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock</textarea></td>
+</tr>
+<tr data-item="Ale">
+<td class="item">Ale</td>
+<td class="canon">Originally 2 barrels; exact consumption not tracked.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1.5 barrels"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock</textarea></td>
+</tr>
+<tr data-item="Grapefruits">
+<td class="item">Grapefruits</td>
+<td class="canon">Gone / removed from ship in Session 14.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Removed"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Cleared from ship in Session 14</textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="inventory-section">
+<h2>Medical</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Bandages">
+<td class="item">Bandages</td>
+<td class="canon">Aboard originally; exact consumption not tracked.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="~75%"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Approximate medical stock</textarea></td>
+</tr>
+<tr data-item="Antiseptic herbs">
+<td class="item">Antiseptic herbs</td>
+<td class="canon">Aboard originally; exact consumption not tracked.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="~75%"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Approximate medical stock</textarea></td>
+</tr>
+<tr data-item="Surgical tools">
+<td class="item">Surgical tools</td>
+<td class="canon">1 basic set / collection.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1 set"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Needles">
+<td class="item">Needles</td>
+<td class="canon">Originally 25.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="25"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">No confirmed losses tracked</textarea></td>
+</tr>
+<tr data-item="Thread">
+<td class="item">Thread</td>
+<td class="canon">Originally 6 spools.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="6 spools"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">No confirmed losses tracked</textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="inventory-section">
+<h2>Repair &amp; Sail</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Hammers">
+<td class="item">Hammers</td>
+<td class="canon">Aboard; exact count not separately stated.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Unknown"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Exact count never stated</textarea></td>
+</tr>
+<tr data-item="Chisels">
+<td class="item">Chisels</td>
+<td class="canon">Aboard; exact count not separately stated.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Unknown"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Exact count never stated</textarea></td>
+</tr>
+<tr data-item="Saws">
+<td class="item">Saws</td>
+<td class="canon">2</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="2"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Nails">
+<td class="item">Nails</td>
+<td class="canon">1 box; original count contradictory in transcript, so quantity remains unresolved.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1 box"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Partial"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Exact nail count unresolved</textarea></td>
+</tr>
+<tr data-item="Rope">
+<td class="item">Rope</td>
+<td class="canon">Originally 2 bundles; use over the campaign was not consistently tracked.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1.5 bundles"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock</textarea></td>
+</tr>
+<tr data-item="Black tar">
+<td class="item">Black tar</td>
+<td class="canon">Originally 1 bucket.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0.5 bucket"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock</textarea></td>
+</tr>
+<tr data-item="Sailcloth patches">
+<td class="item">Sailcloth patches</td>
+<td class="canon">Originally 5, roughly 12 × 12 in.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="3"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock</textarea></td>
+</tr>
+<tr data-item="Whetstones / material">
+<td class="item">Whetstones / material</td>
+<td class="canon">Present, but original exact quantity disputed.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Present"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Exact quantity disputed</textarea></td>
+</tr>
+<tr data-item="Blade oil">
+<td class="item">Blade oil</td>
+<td class="canon">Present.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Present"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="inventory-section">
+<h2>Storage &amp; Misc.</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Gambling dice">
+<td class="item">Gambling dice</td>
+<td class="canon">Present.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1 set+"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Playing cards">
+<td class="item">Playing cards</td>
+<td class="canon">Present.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1 deck+"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Spare clothing / laundry">
+<td class="item">Spare clothing / laundry</td>
+<td class="canon">Present.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Present"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Utility knife">
+<td class="item">Utility knife</td>
+<td class="canon">1</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Carved trinkets">
+<td class="item">Carved trinkets</td>
+<td class="canon">3</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="3"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Finnegan's steel safe">
+<td class="item">Finnegan's steel safe</td>
+<td class="canon">Roughly 300 lb; brought aboard and used as storage. Original 350 gp is no longer treated as untouched safe contents.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">~300 lb; used as storage</textarea></td>
+</tr>
+<tr data-item="Bag of Beans">
+<td class="item">Bag of Beans</td>
+<td class="canon">6 originally. No confirmed bean detonation/use; later ledger notes one carried in GUTR's bandana. Likely 6 total unless used off-record.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="6"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Secured"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Treat as volatile / dangerous</textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="inventory-section">
+<h2>Relics &amp; Special</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Frying Dutch Pan compass">
+<td class="item">Frying Dutch Pan compass</td>
+<td class="canon">Associated with the shipbound ghost; points toward deep desire, past roots, or personal truth.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Active"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Caederick's engraved compass">
+<td class="item">Caederick's engraved compass</td>
+<td class="canon">Separate item from the Frying Dutch Pan compass.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Present"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="Old Agile Fleet flags / imagery">
+<td class="item">Old Agile Fleet flags / imagery</td>
+<td class="canon">Removed when the Tempest Vanguard claimed its identity.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Removed"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea></td>
+</tr>
+<tr data-item="New Tempest's Mercy flag">
+<td class="item">New Tempest's Mercy flag</td>
+<td class="canon">Commissioned from Jeremy; not confirmed picked up yet.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0 aboard"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Pending pickup"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Commissioned; not confirmed collected</textarea></td>
+</tr>
+<tr data-item="Fire-resistant captain curtains">
+<td class="item">Fire-resistant captain curtains</td>
+<td class="canon">Commissioned; not confirmed picked up yet.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0 aboard"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Pending pickup"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Commissioned; not confirmed collected</textarea></td>
+</tr>
+<tr data-item="Isla's new black / purple cloak">
+<td class="item">Isla's new black / purple cloak</td>
+<td class="canon">Commissioned; not confirmed picked up yet.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0 aboard"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Pending pickup"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Commissioned; not confirmed collected</textarea></td>
+</tr>
+<tr data-item="Old fire-resistant cloak">
+<td class="item">Old fire-resistant cloak</td>
+<td class="canon">Destroyed / consumed in Session 15.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Destroyed"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Consumed in Session 15</textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="inventory-section">
+<h2>Crew, Animals &amp; Companions</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width:18%">Item</th>
+<th style="width:40%">Current Canon / Starting State</th>
+<th style="width:11%">Qty Now</th>
+<th style="width:13%">Condition</th>
+<th style="width:18%">Notes / Change</th>
+</tr>
+</thead>
+<tbody>
+<tr data-item="Garry the VIII">
+<td class="item">Garry the VIII</td>
+<td class="canon">Isla's rat; aboard whenever Isla has him.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Active"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Isla's rat</textarea></td>
+</tr>
+<tr data-item="Heraldr">
+<td class="item">Heraldr</td>
+<td class="canon">Kaelis's magical sentimental cat companion.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Active"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Kaelis's magical cat</textarea></td>
+</tr>
+<tr data-item="Bob / transformed cat">
+<td class="item">Bob / transformed cat</td>
+<td class="canon">Session 16 companion; raccoon transformed into a cat.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Active"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Transformed in Session 16</textarea></td>
+</tr>
+<tr data-item="Frying Dutch Pan">
+<td class="item">Frying Dutch Pan</td>
+<td class="canon">Ghost associated with the Tempest's Mercy; consumes no rations.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1 ghost"/></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Active"/></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">No ration use</textarea></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<p class="footer-note">If you upload this page to GitHub Pages or open it locally, the inventory edits save in that browser/device through localStorage. If you want a hard backup, use your browser's “Save page” or print-to-PDF after updating it.</p>
 </div>
 <div class="toast" id="toast"></div>
 <script>
