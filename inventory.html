@@ -75,7 +75,7 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 </style>
 </head>
 <body>
-<header class="topbar"><div class="topbar-inner"><div class="brand"><div class="crest">⚓</div><div class="brand-copy"><strong>The Calling of the Sea</strong><span>Ship inventory &amp; print-ready ledger</span></div></div><nav aria-label="Campaign pages" class="workspace-tabs"><a href="index.html">Players Handbook</a><a href="characters.html">Playable Characters</a><a href="maps.html">Maps &amp; Locations</a><a href="sessions.html">Session Transcripts</a><a aria-current="page" class="active" href="inventory.html">Ship Inventory Log</a><a class="dm-link" href="dm.html">DM Vault</a></nav></div></header>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><div class="crest">⚓</div><div class="brand-copy"><strong>The Calling of the Sea</strong><span>Ship inventory &amp; print-ready ledger</span></div></div><nav aria-label="Campaign pages" class="workspace-tabs"><a href="index.html">Players Handbook</a><a href="characters.html">Characters</a><a href="maps.html">Maps</a><a href="locations.html">Locations &amp; Shops</a><a href="sessions.html">Session Transcripts</a><a aria-current="page" class="active" href="inventory.html">Ship Inventory Log</a><a href="dm.html">DM Vault</a></nav></div></header>
 <div class="page">
 <section class="hero">
 <div class="hero-main card">
@@ -107,7 +107,7 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 <section class="quick" id="quickCards">
 <div class="qcard"><div class="label">Hull</div><div class="value" data-quick="Hull">100%</div><div class="small">Fully repaired and serviceable.</div></div>
 <div class="qcard"><div class="label">Cannonballs</div><div class="value" data-quick="Cannonballs">21</div><div class="small">Current locked count.</div></div>
-<div class="qcard"><div class="label">Food</div><div class="value" data-quick="Dry rations">12 days</div><div class="small">Locked current supply for present crew.</div></div>
+<div class="qcard"><div class="label">Food</div><div class="value" data-quick="Dry rations">11 days</div><div class="small">Locked current supply for present crew.</div></div>
 <div class="qcard"><div class="label">Pigs</div><div class="value" data-quick-pigs="">2 alive</div><div class="small">Henry + Bao.</div></div>
 </section>
 <div class="notice"><strong>DM bookkeeping note:</strong> the default numbers on this page reflect the current Session 17 starting ledger. Entries marked unknown or unverified are intentionally left unresolved until the table decides otherwise.</div>
@@ -130,7 +130,7 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 <td class="canon">Tempest's Mercy</td>
 <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/><span class="print-value">1</span></td>
 <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Serviceable"/><span class="print-value">Serviceable</span></td>
-<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Current through Session 16</textarea><span class="print-value">Current through Session 16</span></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Current through Session 17</textarea><span class="print-value">Current through Session 17</span></td>
 </tr>
 <tr data-item="Captain">
 <td class="item">Captain</td>
@@ -166,10 +166,10 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 <tbody>
 <tr data-item="Swivel guns">
 <td class="item">Swivel guns</td>
-<td class="canon">2</td>
+<td class="canon">Two swivel guns are aboard; Session 17 confirms Flint maintained the ship weapons and dried wet fuses.</td>
 <td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="2"/><span class="print-value">2</span></td>
-<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Functional"/><span class="print-value">Functional</span></td>
-<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea><span class="print-value"></span></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Functional / maintained"/><span class="print-value">Functional / maintained</span></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Flint cleaned the ship weapons and dried wet fuses in Session 17.</textarea><span class="print-value">Flint cleaned the ship weapons and dried wet fuses in Session 17.</span></td>
 </tr>
 <tr data-item="Cannonballs">
 <td class="item">Cannonballs</td>
@@ -241,7 +241,7 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="None"/><span class="print-value">None</span></td>
 <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2"></textarea><span class="print-value"></span></td>
 </tr>
-</tbody>
+<tr data-item="Main cannons / cannon ports"><td class="item">Main cannons / cannon ports</td><td class="canon">Session 17 confirms the cannon ports are filled and the cannons are operational; exact cannon count is not established.</td><td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="Operational"/><span class="print-value">Operational</span></td><td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Ready"/><span class="print-value">Ready</span></td><td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Flint cleaned the cannons and dried the fuses.</textarea><span class="print-value">Flint cleaned the cannons and dried the fuses.</span></td></tr></tbody>
 </table>
 </div>
 </section>
@@ -261,10 +261,10 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 <tbody>
 <tr data-item="Dry rations">
 <td class="item">Dry rations</td>
-<td class="canon">Exact quantity unknown because Session 7 resupply had no number. Recommended current lock: 10–14 days for the current crew.</td>
-<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="12 days"/><span class="print-value">12 days</span></td>
+<td class="canon">Session 17 current count: 11 days of rations remain.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="11 days"/><span class="print-value">11 days</span></td>
 <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Usable"/><span class="print-value">Usable</span></td>
-<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">DM bookkeeping lock for current crew</textarea><span class="print-value">DM bookkeeping lock for current crew</span></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Session 17 confirmed 11 days remaining.</textarea><span class="print-value">Session 17 confirmed 11 days remaining.</span></td>
 </tr>
 <tr data-item="Fresh deer meat">
 <td class="item">Fresh deer meat</td>
@@ -564,24 +564,24 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 </tr>
 <tr data-item="New Tempest's Mercy flag">
 <td class="item">New Tempest's Mercy flag</td>
-<td class="canon">Commissioned from Jeremy; not confirmed picked up yet.</td>
-<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0 aboard"/><span class="print-value">0 aboard</span></td>
-<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Pending pickup"/><span class="print-value">Pending pickup</span></td>
-<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Commissioned; not confirmed collected</textarea><span class="print-value">Commissioned; not confirmed collected</span></td>
+<td class="canon">Jeremy completed and delivered the Tempest’s Mercy flag in Session 17.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1 aboard"/><span class="print-value">1 aboard</span></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Picked up / ready"/><span class="print-value">Picked up / ready</span></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Jeremy completed and delivered it in Session 17.</textarea><span class="print-value">Jeremy completed and delivered it in Session 17.</span></td>
 </tr>
 <tr data-item="Fire-resistant captain curtains">
 <td class="item">Fire-resistant captain curtains</td>
-<td class="canon">Commissioned; not confirmed picked up yet.</td>
-<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0 aboard"/><span class="print-value">0 aboard</span></td>
-<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Pending pickup"/><span class="print-value">Pending pickup</span></td>
-<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Commissioned; not confirmed collected</textarea><span class="print-value">Commissioned; not confirmed collected</span></td>
+<td class="canon">Jeremy delivered the fire-resistant captain curtains in Session 17; Isla placed them in her cabin.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1 set"/><span class="print-value">1 set</span></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Installed / aboard"/><span class="print-value">Installed / aboard</span></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Picked up from Jeremy in Session 17; Isla placed them in her cabin.</textarea><span class="print-value">Picked up from Jeremy in Session 17; Isla placed them in her cabin.</span></td>
 </tr>
 <tr data-item="Isla's new black / purple cloak">
 <td class="item">Isla's new black / purple cloak</td>
-<td class="canon">Commissioned; not confirmed picked up yet.</td>
-<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="0 aboard"/><span class="print-value">0 aboard</span></td>
-<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Pending pickup"/><span class="print-value">Pending pickup</span></td>
-<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Commissioned; not confirmed collected</textarea><span class="print-value">Commissioned; not confirmed collected</span></td>
+<td class="canon">Jeremy’s commissioned cloak was collected in Session 17.</td>
+<td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/><span class="print-value">1</span></td>
+<td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Picked up"/><span class="print-value">Picked up</span></td>
+<td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Jeremy commission collected in Session 17.</textarea><span class="print-value">Jeremy commission collected in Session 17.</span></td>
 </tr>
 <tr data-item="Old fire-resistant cloak">
 <td class="item">Old fire-resistant cloak</td>
@@ -590,7 +590,7 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 <td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Destroyed"/><span class="print-value">Destroyed</span></td>
 <td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Consumed in Session 15</textarea><span class="print-value">Consumed in Session 15</span></td>
 </tr>
-</tbody>
+<tr data-item="Jose's mother's +1 medium armor"><td class="item">Jose's mother's +1 medium armor</td><td class="canon">Recovered from a locked gray chest on Jose's shrimp boat in Session 17. Homebrew table ruling: +1 to Dexterity saves and +1 to saves against spells.</td><td class="edit-cell"><input class="inv-input qty-input" data-field="qty" disabled="" type="text" value="1"/><span class="print-value">1</span></td><td class="edit-cell"><input class="inv-input condition-input" data-field="condition" disabled="" type="text" value="Good"/><span class="print-value">Good</span></td><td class="edit-cell"><textarea class="inv-input notes-input" data-field="notes" disabled="" rows="2">Party loot; current wearer/owner was not clearly locked in the transcript.</textarea><span class="print-value">Party loot; current wearer/owner was not clearly locked in the transcript.</span></td></tr></tbody>
 </table>
 </div>
 </section>
@@ -645,7 +645,7 @@ button,input,textarea,a{font:inherit} .topbar{position:sticky;top:0;z-index:60;b
 <div class="toast" id="toast"></div>
 <script>
 const INVENTORY_PIN = '1120';
-const STORAGE_KEY = 'tempests_mercy_inventory_v1';
+const STORAGE_KEY = 'tempests_mercy_inventory_v2_session17';
 const DEFAULT_DATA = {"meta": {"captain": "Isla Drake", "session": "17", "date": "", "port": ""}, "rows": [{"item": "Ship", "canon": "Tempest's Mercy", "qty": "1", "condition": "Serviceable", "notes": "Current through Session 16"}, {"item": "Captain", "canon": "Isla Drake", "qty": "1", "condition": "Active", "notes": "Isla Drake"}, {"item": "Hull", "canon": "Repaired / serviceable. Session 15 repair crew fixed significant holes/damage for 30 gp; Session 16 later confirms the repair.", "qty": "100%", "condition": "Fully repaired", "notes": "30 gp repair completed"}, {"item": "Swivel guns", "canon": "2", "qty": "2", "condition": "Functional", "notes": ""}, {"item": "Cannonballs", "canon": "Recommended current lock: 21 remaining from an original 24. 2 confirmed fired + 1 lost. Starting number was never established at the table.", "qty": "21", "condition": "Ready", "notes": "Locked from 24 starting; 2 fired + 1 lost"}, {"item": "Fleet pistols", "canon": "10 total: 5 functional / 5 rusty or repair-needed.", "qty": "10", "condition": "5 working / 5 repair", "notes": ""}, {"item": "Fleet muskets", "canon": "15 total: 3 functional / 12 broken.", "qty": "15", "condition": "3 working / 12 broken", "notes": ""}, {"item": "Cutlasses", "canon": "3 assorted", "qty": "3", "condition": "Serviceable", "notes": ""}, {"item": "Boarding axe", "canon": "1", "qty": "1", "condition": "Serviceable", "notes": ""}, {"item": "Additional longswords", "canon": "6 were stripped from enemies in Session 6 with intent to sell; whether all six remain aboard was never locked.", "qty": "6?", "condition": "Unverified", "notes": "Last confirmed: 6 taken for resale"}, {"item": "Gunpowder / cannon powder", "canon": "Present, but no starting quantity was ever recorded.", "qty": "Unknown", "condition": "Needs count", "notes": "No exact quantity was ever established"}, {"item": "Goblin bombs", "canon": "2 bludgeoning/shrapnel-style bombs recovered in Session 9; no later confirmed use found.", "qty": "2", "condition": "Ready", "notes": "No confirmed use since recovery"}, {"item": "Net launcher", "canon": "1 launcher; 1 net shot remaining when recovered.", "qty": "1", "condition": "Functional", "notes": "1 net shot remaining"}, {"item": "Weapon-cleaning kits", "canon": "None specifically acquired / recorded.", "qty": "0", "condition": "None", "notes": ""}, {"item": "Dry rations", "canon": "Exact quantity unknown because Session 7 resupply had no number. Recommended current lock: 10\u201314 days for the current crew.", "qty": "12 days", "condition": "Usable", "notes": "DM bookkeeping lock for current crew"}, {"item": "Fresh deer meat", "canon": "Kaelis's deer; partially consumed by Session 14 as deer steaks. Small remainder / nearly gone.", "qty": "2 meals", "condition": "Use soon", "notes": "Remaining from Kaelis's deer"}, {"item": "Henry", "canon": "Alive pig \u2014 pet / friend.", "qty": "1", "condition": "Alive / healthy", "notes": "Pet pig"}, {"item": "Bao", "canon": "Alive pig \u2014 theoretically food; still alive.", "qty": "1", "condition": "Alive / healthy", "notes": "Food pig... technically"}, {"item": "Pig feed", "canon": "Original one-week straw/feed supply should be considered consumed. Replacement amount not tracked.", "qty": "Unknown", "condition": "Needs restock/count", "notes": "Original one-week feed is long gone"}, {"item": "Fresh water", "canon": "Originally 6 barrels and explicitly replenished in Session 7; current exact barrel count unknown.", "qty": "5 barrels", "condition": "Good", "notes": "DM bookkeeping lock"}, {"item": "Rum", "canon": "Originally 4 barrels; exact consumption not tracked.", "qty": "3 barrels", "condition": "Good", "notes": "DM bookkeeping lock"}, {"item": "Ale", "canon": "Originally 2 barrels; exact consumption not tracked.", "qty": "1.5 barrels", "condition": "Good", "notes": "DM bookkeeping lock"}, {"item": "Grapefruits", "canon": "Gone / removed from ship in Session 14.", "qty": "0", "condition": "Removed", "notes": "Cleared from ship in Session 14"}, {"item": "Bandages", "canon": "Aboard originally; exact consumption not tracked.", "qty": "~75%", "condition": "Usable", "notes": "Approximate medical stock"}, {"item": "Antiseptic herbs", "canon": "Aboard originally; exact consumption not tracked.", "qty": "~75%", "condition": "Usable", "notes": "Approximate medical stock"}, {"item": "Surgical tools", "canon": "1 basic set / collection.", "qty": "1 set", "condition": "Serviceable", "notes": ""}, {"item": "Needles", "canon": "Originally 25.", "qty": "25", "condition": "Good", "notes": "No confirmed losses tracked"}, {"item": "Thread", "canon": "Originally 6 spools.", "qty": "6 spools", "condition": "Good", "notes": "No confirmed losses tracked"}, {"item": "Hammers", "canon": "Aboard; exact count not separately stated.", "qty": "Unknown", "condition": "Serviceable", "notes": "Exact count never stated"}, {"item": "Chisels", "canon": "Aboard; exact count not separately stated.", "qty": "Unknown", "condition": "Serviceable", "notes": "Exact count never stated"}, {"item": "Saws", "canon": "2", "qty": "2", "condition": "Serviceable", "notes": ""}, {"item": "Nails", "canon": "1 box; original count contradictory in transcript, so quantity remains unresolved.", "qty": "1 box", "condition": "Partial", "notes": "Exact nail count unresolved"}, {"item": "Rope", "canon": "Originally 2 bundles; use over the campaign was not consistently tracked.", "qty": "1.5 bundles", "condition": "Good", "notes": "DM bookkeeping lock"}, {"item": "Black tar", "canon": "Originally 1 bucket.", "qty": "0.5 bucket", "condition": "Usable", "notes": "DM bookkeeping lock"}, {"item": "Sailcloth patches", "canon": "Originally 5, roughly 12 \u00d7 12 in.", "qty": "3", "condition": "Good", "notes": "DM bookkeeping lock"}, {"item": "Whetstones / material", "canon": "Present, but original exact quantity disputed.", "qty": "Present", "condition": "Usable", "notes": "Exact quantity disputed"}, {"item": "Blade oil", "canon": "Present.", "qty": "Present", "condition": "Usable", "notes": ""}, {"item": "Gambling dice", "canon": "Present.", "qty": "1 set+", "condition": "Good", "notes": ""}, {"item": "Playing cards", "canon": "Present.", "qty": "1 deck+", "condition": "Good", "notes": ""}, {"item": "Spare clothing / laundry", "canon": "Present.", "qty": "Present", "condition": "Usable", "notes": ""}, {"item": "Utility knife", "canon": "1", "qty": "1", "condition": "Serviceable", "notes": ""}, {"item": "Carved trinkets", "canon": "3", "qty": "3", "condition": "Good", "notes": ""}, {"item": "Finnegan's steel safe", "canon": "Roughly 300 lb; brought aboard and used as storage. Original 350 gp is no longer treated as untouched safe contents.", "qty": "1", "condition": "Serviceable", "notes": "~300 lb; used as storage"}, {"item": "Bag of Beans", "canon": "6 originally. No confirmed bean detonation/use; later ledger notes one carried in GUTR's bandana. Likely 6 total unless used off-record.", "qty": "6", "condition": "Secured", "notes": "Treat as volatile / dangerous"}, {"item": "Frying Dutch Pan compass", "canon": "Associated with the shipbound ghost; points toward deep desire, past roots, or personal truth.", "qty": "1", "condition": "Active", "notes": ""}, {"item": "Caederick's engraved compass", "canon": "Separate item from the Frying Dutch Pan compass.", "qty": "1", "condition": "Present", "notes": ""}, {"item": "Old Agile Fleet flags / imagery", "canon": "Removed when the Tempest Vanguard claimed its identity.", "qty": "0", "condition": "Removed", "notes": ""}, {"item": "New Tempest's Mercy flag", "canon": "Commissioned from Jeremy; not confirmed picked up yet.", "qty": "0 aboard", "condition": "Pending pickup", "notes": "Commissioned; not confirmed collected"}, {"item": "Fire-resistant captain curtains", "canon": "Commissioned; not confirmed picked up yet.", "qty": "0 aboard", "condition": "Pending pickup", "notes": "Commissioned; not confirmed collected"}, {"item": "Isla's new black / purple cloak", "canon": "Commissioned; not confirmed picked up yet.", "qty": "0 aboard", "condition": "Pending pickup", "notes": "Commissioned; not confirmed collected"}, {"item": "Old fire-resistant cloak", "canon": "Destroyed / consumed in Session 15.", "qty": "0", "condition": "Destroyed", "notes": "Consumed in Session 15"}, {"item": "Garry the VIII", "canon": "Isla's rat; aboard whenever Isla has him.", "qty": "1", "condition": "Active", "notes": "Isla's rat"}, {"item": "Heraldr", "canon": "Kaelis's magical sentimental cat companion.", "qty": "1", "condition": "Active", "notes": "Kaelis's magical cat"}, {"item": "Bob / transformed cat", "canon": "Session 16 companion; raccoon transformed into a cat.", "qty": "1", "condition": "Active", "notes": "Transformed in Session 16"}, {"item": "Frying Dutch Pan", "canon": "Ghost associated with the Tempest's Mercy; consumes no rations.", "qty": "1 ghost", "condition": "Active", "notes": "No ration use"}]};
 let inventoryUnlocked = false;
 
@@ -702,14 +702,29 @@ function applyData(data) {
   syncQuickCards();
 }
 
+
+function applySession17Defaults(data){
+ const patch={
+  'Dry rations':{qty:'11 days',condition:'Usable',notes:'Session 17 confirmed 11 days remaining.'},
+  "New Tempest's Mercy flag":{qty:'1 aboard',condition:'Picked up / ready',notes:'Jeremy completed and delivered it in Session 17.'},
+  'Fire-resistant captain curtains':{qty:'1 set',condition:'Installed / aboard',notes:'Picked up from Jeremy in Session 17; Isla placed them in her cabin.'},
+  "Isla's new black / purple cloak":{qty:'1',condition:'Picked up',notes:'Jeremy commission collected in Session 17.'},
+  'Swivel guns':{qty:'2',condition:'Functional / maintained',notes:'Flint cleaned the ship weapons and dried wet fuses in Session 17.'},
+  'Main cannons / cannon ports':{qty:'Operational',condition:'Ready',notes:'Flint cleaned the cannons and dried the fuses.'},
+  "Jose's mother's +1 medium armor":{qty:'1',condition:'Good',notes:'Party loot; current wearer/owner was not clearly locked in the transcript.'}
+ };
+ if(data&&Array.isArray(data.rows))data.rows.forEach(r=>{if(patch[r.item])Object.assign(r,patch[r.item])});
+ return data;
+}
+
 function loadInventory() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if(raw) { applyData(JSON.parse(raw)); }
-    else { applyData(DEFAULT_DATA); }
+    else { applyData(applySession17Defaults(DEFAULT_DATA)); }
   } catch(err) {
     console.error(err);
-    applyData(DEFAULT_DATA);
+    applyData(applySession17Defaults(DEFAULT_DATA));
   }
   setUnlockedState(false);
 }
@@ -735,7 +750,7 @@ function saveInventory() {
 function resetInventory() {
   if(!confirm('Reset the inventory to the default Session 17 ledger?')) return;
   localStorage.removeItem(STORAGE_KEY);
-  applyData(DEFAULT_DATA);
+  applyData(applySession17Defaults(DEFAULT_DATA));
   setUnlockedState(false);
   showToast('Inventory reset to default');
 }
