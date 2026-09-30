@@ -127,4 +127,4 @@ document.addEventListener('keydown',e=>{if(e.key==='/'&&!/input|select|textarea/
 const initialQ=new URLSearchParams(location.search).get('q')||'';q.value=initialQ;renderSession(current);if(initialQ)runSearch();
 
 window.addEventListener('hashchange',()=>{const id=decodeURIComponent(location.hash.slice(1));if(document.getElementById(id)){setSessionView(currentSession().rows.some(r=>r.id===id)?'transcript':'recap');openTextTarget(id);}});
-</script><script defer src="/table_chat.js"></script></body></html>
+</script><script defer src="table_chat.js?v=deckhand-local-2"></script></body></html>
