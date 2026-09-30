@@ -30,10 +30,10 @@
 .dm-panel h3{color:#f4d68d;margin-top:24px}.dm-panel li{margin:9px 0}.dm-panel>ol,.dm-panel>ul{padding-left:24px}.dm-panel>p{line-height:1.7}.dm-source{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace;padding:20px;border:1px solid #28405a;border-radius:14px;background:#0b1726;color:#cfdeea}.dm-panel .table-wrap{overflow-x:auto}.dm-panel table{width:100%;border-collapse:collapse;min-width:760px}.dm-panel td,.dm-panel th{padding:14px;vertical-align:top;border-bottom:1px solid #28405a;text-align:left}.dm-panel th{color:#f4d68d}
 @media(max-width:760px){.thread-grid{grid-template-columns:1fr}.s18-recap{padding:0 12px 20px}.thread-card{padding:18px}.event{grid-template-columns:30px 1fr;gap:10px}.event-number{width:28px;height:28px}.notice{padding:14px}.thread-card h3{font-size:21px}}
 @media print{.thread-grid{display:block}.thread-card{break-inside:avoid;margin-bottom:14px;background:white;color:black}.thread-field p,.thread-card h3,.thread-footer{color:black}.section-links,.searchbox,.recap-view-controls{display:none}.notice{background:white;color:black;border-color:#777}}
-</style></head><body>
-<header class="topbar"><div class="topbar-inner"><div class="brand"><div class="crest">⚓</div><div><strong>The Calling of the Sea</strong><span>Dungeon Master Vault</span></div></div><nav aria-label="Campaign pages" class="workspace-tabs"><a href="index.html">Players Handbook</a><a href="storylines.html">Open Storylines</a><a href="characters.html">Characters</a><a href="maps.html">Maps</a><a href="locations.html">Locations &amp; Shops</a><a href="sessions.html">Session Transcripts</a><a href="inventory.html">Ship Inventory Log</a><a aria-current="page" class="active" href="dm.html">DM Vault</a></nav></div></header>
+</style><style>.workspace-tabs{flex-wrap:wrap;overflow:visible}.top-inner{flex-wrap:wrap}.workspace-tabs a{padding:8px 10px}</style></head><body>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><div class="crest">⚓</div><div><strong>The Calling of the Sea</strong><span>Dungeon Master Vault</span></div></div><nav aria-label="Campaign pages" class="workspace-tabs"><a href="index.html">Players Handbook</a><a href="storylines.html">Open Storylines</a><a href="characters.html">Characters</a><a href="maps.html">Maps</a><a href="locations.html">Locations &amp; Shops</a><a href="sessions.html">Session Transcripts</a><a href="inventory.html">Ship Inventory Log</a><a aria-current="page" class="active" href="dm.html">DM Vault</a><a href="http://192.168.68.62:8765/index.html" data-local-mode title="Open the home-network copy">Local Mode</a></nav></div></header>
 <main class="shell">
-<section class="lock-card" id="lockCard"><div class="lock-icon">🔐</div><div class="eyebrow">Dungeon Master Only</div><h1>DM Vault Locked</h1><p>Enter the DM access code to open locations, shop prices, NPC notes, loose-end connections, and hidden campaign prep.</p><form class="lock-form" id="unlockForm"><input aria-label="DM access code" autocomplete="off" id="dmCode" inputmode="numeric" placeholder="DM access code" type="password"><button type="submit">Unlock</button></form><div class="lock-error" id="lockError">That code did not unlock the vault.</div></section>
+<section class="lock-card" id="lockCard"><div class="lock-icon">🔐</div><div class="eyebrow">Dungeon Master Only</div><h1>DM Vault Locked</h1><p>Enter the DM access code to open locations, shop prices, NPC notes, loose-end connections, and hidden campaign prep.</p><p><a href="https://rickyricardo-dev.github.io/Ever-pass-Sea-Campaign---Interactive-Map/dm.html">Open the secure online DM Vault</a></p><form class="lock-form" id="unlockForm"><input aria-label="DM access code" autocomplete="off" id="dmCode" inputmode="numeric" placeholder="DM access code" type="password"><button type="submit">Unlock</button></form><div class="lock-error" id="lockError">That code did not unlock the vault.</div></section>
 <div id="dmMount"></div>
 </main>
 <script>
@@ -98,7 +98,9 @@ function initVault() {
 }
 document.getElementById('unlockForm').addEventListener('submit', async (ev)=>{
   ev.preventDefault(); const code=document.getElementById('dmCode').value; const err=document.getElementById('lockError'); err.classList.remove('show');
+  if (!window.crypto || !window.crypto.subtle) { err.textContent='Open the DM Vault on the HTTPS GitHub website to unlock it with your existing code.'; err.classList.add('show'); return; }
+  err.textContent='That code did not unlock the vault.';
   try { const html=await decryptVault(code); const mount=document.getElementById('dmMount'); mount.innerHTML=html; document.getElementById('lockCard').style.display='none'; mount.classList.add('unlocked'); initVault(); document.getElementById('dmCode').value=''; }
   catch(e) { err.classList.add('show'); }
 });
-</script></body></html>
+</script><script defer src="table_chat.js?v=deckhand-anywhere-3"></script></body></html>
