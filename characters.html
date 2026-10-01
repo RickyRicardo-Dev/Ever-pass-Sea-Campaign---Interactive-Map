@@ -18,4 +18,4 @@
 document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>history.replaceState(null,'','#tab-'+btn.dataset.tab)));
 function openCharacterHash(){const id=decodeURIComponent(location.hash.slice(1));const node=document.getElementById(id);const panel=node?.classList.contains('tab-panel')?node:node?.closest('.tab-panel');if(panel){document.querySelector('[data-tab="'+panel.id.replace('tab-','')+'"]')?.click();if(node!==panel)node.scrollIntoView({block:'center'});}}
 openCharacterHash();window.addEventListener('hashchange',openCharacterHash);
-</script><script defer src="table_chat.js?v=deckhand-anywhere-3"></script></body></html>
+</script><script defer src="table_chat.js?v=deckhand-canon-5"></script></body></html>

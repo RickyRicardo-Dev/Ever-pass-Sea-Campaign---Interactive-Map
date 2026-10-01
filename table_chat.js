@@ -16,7 +16,7 @@
     if (!value || typeof value.server !== 'string' || typeof value.key !== 'string') return null;
     try {
       const u = new URL(value.server);
-      if (u.protocol !== 'https:' || !/^[a-z0-9-]+\.trycloudflare\.com$/.test(u.hostname) ||
+      if (u.protocol !== 'https:' || !(/^[a-z0-9-]+\.trycloudflare\.com$/.test(u.hostname) || /^[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev$/.test(u.hostname)) ||
           u.username || u.password || u.port || u.pathname !== '/' || u.search || u.hash ||
           !/^[A-Za-z0-9_-]{32,128}$/.test(value.key)) return null;
       return {server: u.origin, key: value.key};
@@ -42,6 +42,7 @@
       history.replaceState(null, '', location.pathname + location.search);
     } catch (_) {}
   }
+  let directory = remote?.server.endsWith('.workers.dev') ? remote.server : null;
   let service = onLocalSite ? location.origin : remote?.server;
   let accessKey = onLocalSite ? null : remote?.key;
   let storageKey = 'seaTableChat:anywhere-v3:' + (service || 'unconnected');
@@ -54,7 +55,7 @@
   launch.setAttribute('aria-expanded', 'false'); launch.setAttribute('aria-controls', 'sea-chat-panel');
   const panel = document.createElement('section');
   panel.id = 'sea-chat-panel'; panel.setAttribute('aria-label', 'Campaign chat');
-  panel.innerHTML = '<div id="sea-chat-head"><div><strong>Ask the Deckhand</strong><small>Answers from your campaign’s player notes</small></div><button id="sea-chat-close" type="button" aria-label="Close chat">×</button></div><div id="sea-chat-connect"><span id="sea-chat-status" role="status">Ready to connect.</span><details id="sea-chat-settings"><summary>Connection</summary><p>Paste the full Deckhand access link generated on your PC. You only need to reconnect when that link changes.</p><form id="sea-chat-connection-form"><input id="sea-chat-access-link" type="password" autocomplete="off" placeholder="Paste the full access link" aria-label="Deckhand access link"><button id="sea-chat-connect-button" type="submit">Connect</button></form></details><a id="sea-chat-local-link" hidden>Open Local Mode on home Wi-Fi</a></div><div id="sea-chat-log" aria-live="polite"></div><form id="sea-chat-compose"><textarea id="sea-chat-question" maxlength="2400" placeholder="Ask about a session, character, place, or open lead…" aria-label="Your question"></textarea><button id="sea-chat-send" type="submit">Send</button></form>';
+  panel.innerHTML = '<div id="sea-chat-head"><div><strong>Ask the Deckhand</strong><small>Answers from your campaign’s player notes</small></div><button id="sea-chat-close" type="button" aria-label="Close chat">×</button></div><div id="sea-chat-connect"><span id="sea-chat-status" role="status">Ready to connect.</span><details id="sea-chat-settings"><summary>Connection</summary><p>Paste the full Deckhand access link generated on your PC. A permanent invitation only needs to be opened once per browser.</p><form id="sea-chat-connection-form"><input id="sea-chat-access-link" type="password" autocomplete="off" placeholder="Paste the full access link" aria-label="Deckhand access link"><button id="sea-chat-connect-button" type="submit">Connect</button></form></details><a id="sea-chat-local-link" hidden>Open Local Mode on home Wi-Fi</a></div><div id="sea-chat-log" aria-live="polite"></div><form id="sea-chat-compose"><textarea id="sea-chat-question" maxlength="2400" placeholder="Ask about a session, character, place, or open lead…" aria-label="Your question"></textarea><button id="sea-chat-send" type="submit">Send</button></form>';
   document.body.append(launch, panel);
   const log = panel.querySelector('#sea-chat-log');
   const form = panel.querySelector('#sea-chat-compose');
@@ -114,7 +115,7 @@
       if (error.fromService) throw error;
       throw new Error(onLocalSite
         ? 'Could not reach the local server. Leave the chat launcher running on your PC and stay on the home Wi-Fi.'
-        : 'Could not reach your campaign PC. Keep START_ANYWHERE_CHAT.bat and Ollama running. If the launcher restarted, paste its newest access link under Connection.');
+        : 'Could not reach your campaign PC. Keep START_ANYWHERE_CHAT.bat and Ollama running. If the host just restarted, wait a minute and try again. Permanent invitations reconnect automatically.');
     } finally { clearTimeout(timer); }
   }
   function connect() {
@@ -126,7 +127,20 @@
       status.textContent = 'Connecting to your campaign PC…';
     }
     localLink.hidden = true;
-    connection = request('/api/health').then(data => {
+    connection = (async () => {
+      if (directory) {
+        const response = await fetch(directory + '/connection', {
+          headers: {Authorization: 'Bearer ' + accessKey}, cache: 'no-store',
+          credentials: 'omit', redirect: 'error', signal: AbortSignal.timeout(15000)
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Connection lookup failed.');
+        const next = validateConnection({server: data.server, key: accessKey});
+        if (!next || !next.server.endsWith('.trycloudflare.com')) throw new Error('The campaign connection is not ready. Try again shortly.');
+        service = next.server;
+      }
+      return request('/api/health');
+    })().then(data => {
       if (!['deckhand-local', 'deckhand-anywhere'].includes(data.service) || data.ok !== true) {
         throw new Error('Please start the updated chat launcher included with this package.');
       }
@@ -149,6 +163,7 @@
     try {
       const next = connectionFromLink(linkField.value);
       if (!next) throw new Error('Paste the entire Deckhand access link from DECKHAND_ACCESS_LINK.txt, including the part after #.');
+      directory = next.server.endsWith('.workers.dev') ? next.server : null;
       service = next.server; accessKey = next.key; connection = null;
       storageKey = 'seaTableChat:anywhere-v3:' + service;
       messages = []; log.replaceChildren();
@@ -177,6 +192,7 @@
     send.disabled = true; connectionButton.disabled = true; send.textContent = '…';
     let waiting;
     try {
+      if (directory) connection = null; // Resolve the latest tunnel before each question.
       await connect();
       const history = messages.slice(-6).map(m => ({role: m.role, content: m.content}));
       bubble('user', question); messages.push({role: 'user', content: question}); save(); field.value = '';
