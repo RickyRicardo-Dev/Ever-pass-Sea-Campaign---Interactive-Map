@@ -1,0 +1,31 @@
+DECKHAND CHAT: Keep using your existing remote-chat setup and READ_ME_FIRST.txt. The Deckhand button and connection code are unchanged in this update.
+
+THE CALLING OF THE SEA — SESSION 19 UPDATE
+
+1. Extract the entire ZIP into one folder.
+2. Open index.html in Chrome, Edge, or Firefox.
+3. Keep all HTML files, JavaScript files, and the transcripts folder together.
+
+WHAT IS UPDATED
+- Session 19: full supplied transcript, player-safe recap, confirmed changes, and unresolved details.
+- Open Storylines: 23 unresolved threads plus 4 completed moments, with search and filters.
+- DM Vault: Session 19 prep, hidden divine lore, pending rulings, old campaign threads, and original design notes.
+- Characters, Filiorum, maps, ship inventory, and printable ledger reflect Session 19.
+- Filiorum's public shop directory lists only shop names and what they sell; unrevealed quest plans were not published.
+- The Deckhand chat button and its existing connection code are unchanged.
+
+DM VAULT
+Your existing access code is unchanged. Hidden lore and the original design notes remain encrypted. The code is not printed in this package. Use Lock Vault when finished.
+
+SHIP INVENTORY
+Editing code remains 1120. The ledger saves on this browser/device. Earlier custom edits are retained when the prior Session 17 browser data is available. Review retained values against the new ship damage. A new folder or different browser may have separate saved data.
+
+AUDIO AND TRANSCRIPTS
+Sessions 1–17 keep their original transcript rows and audio links.
+Session 14 remains reconstruction only.
+Session 18 includes the exact supplied automated text. It starts during the dock battle, contains table chatter and recognition errors, and has no timestamps. P001, P002, etc. are paragraph labels. The missing opening is the separate DM recap. Local audio can be loaded for listening; no Session 18 synchronization is invented.
+Session 19 includes the complete supplied clean transcript in transcripts/Session_19_CLEAN.txt and in the searchable session viewer. It includes the opening Session 18 recap because that recap is part of the supplied Session 19 file. The transcript has no timestamps, so P001, P002, etc. are paragraph labels rather than invented timing.
+
+SHIP STATE AND LOOT
+The Filiorum crew patched nineteen battle-side holes and fire-scorched deck damage, then declared the ship ready. Ten days of rations are confirmed. Current ammunition and some repair-material totals still need an audit; no numerical hull percentage is invented.
+Packet contents, B-12 inn spelling/location, bag uses, several item and money holders, the ring's missing sixth form, the yellow orb's source, the moving chest, Vincent's unnamed superior, and the wind favor's terms remain open. Fred is confirmed alive and recovered. A level-up was promised at the end of Session 19, but the supplied transcript does not record the resulting level.

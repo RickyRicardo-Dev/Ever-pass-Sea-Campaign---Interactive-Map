@@ -1,0 +1,23 @@
+THE CALLING OF THE SEA — SESSION 19 WEBSITE CHANGELOG
+
+SESSION RECORD
+- Added the complete supplied Session 19 transcript to the searchable session viewer.
+- Added the original clean transcript file at transcripts/Session_19_CLEAN.txt.
+- Added a player-safe recap and a confirmed-changes / unresolved-details table.
+
+CAMPAIGN HUB
+- Updated the home page through Session 19.
+- Updated Open Storylines to 23 unresolved threads and 4 completed moments.
+- Added the Vincent/Tree, Vincent/Isla, unexplained-object, and BOSSIS leads.
+- Marked the ship repair and Fred's recovery as completed moments.
+
+REFERENCE PAGES
+- Updated characters with Vincent Drake, Lady Beast, and the crew's newest status.
+- Updated Filiorum and its map note with only player-known Session 19 information.
+- Added Filiorum shop names and what they sell. Unplayed shop quests and hidden scenario hooks are not published.
+- Updated the working and printable ship ledgers with completed repairs, 10 days of rations, the yellow orb, blunderbuss, money entries, and the ring identification.
+
+CONTINUITY AND SAFETY
+- Hidden, non-canon plans about Vincent, the Tree's actual power, sacrifice costs, and future pirate scenarios were not presented as public canon.
+- Uncertain transcript details remain labeled as unresolved instead of being guessed.
+- The existing Deckhand JavaScript file and chat button integration were preserved.

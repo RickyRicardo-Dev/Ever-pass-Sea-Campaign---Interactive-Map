@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"><meta content="#08111d" name="theme-color"><title>The Calling of the Sea — Open Storylines</title><style>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport">
+<meta content="#08111d" name="theme-color">
+<title>The Calling of the Sea — Open Storylines</title><style>
 :root{--bg:#07101b;--bg2:#0b1625;--panel:#0f1d2d;--panel2:#132438;--line:#28405a;--text:#eef5fb;--muted:#9fb0c2;--gold:#e5b85b;--gold2:#f4d68d;--sea:#5ac8d8;--green:#6fdaa3;--red:#ff8d8d;--violet:#b9a1ff;--orange:#f1ad6c;--shadow:0 20px 60px rgba(0,0,0,.28);--radius:18px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(90,200,216,.09),transparent 28rem),radial-gradient(circle at 90% 10%,rgba(229,184,91,.08),transparent 25rem),linear-gradient(180deg,var(--bg),#081320 55%,#07101b);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit}button,input,select,textarea{font:inherit}.topbar{position:sticky;top:0;z-index:100;background:rgba(7,16,27,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(159,176,194,.16)}.top-inner{max-width:1540px;margin:auto;display:flex;align-items:center;gap:16px;padding:10px 20px;min-height:72px}.brand{display:flex;align-items:center;gap:11px;min-width:0}.crest{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(229,184,91,.4);background:linear-gradient(145deg,rgba(229,184,91,.14),rgba(90,200,216,.08));font-size:21px}.brand-copy strong{font-family:Georgia,serif;font-size:17px;display:block;white-space:nowrap}.brand-copy span{display:block;color:var(--muted);font-size:11px;white-space:nowrap}.workspace-tabs{margin-left:auto;display:flex;gap:3px;padding:4px;border-radius:13px;background:rgba(255,255,255,.04);border:1px solid rgba(159,176,194,.16);overflow:auto;scrollbar-width:none}.workspace-tabs::-webkit-scrollbar{display:none}.workspace-tabs a{text-decoration:none;color:var(--muted);padding:9px 13px;border-radius:10px;font-weight:800;white-space:nowrap;font-size:13px}.workspace-tabs a:hover{color:var(--text);background:rgba(90,200,216,.07)}.workspace-tabs a.active{background:linear-gradient(135deg,rgba(229,184,91,.2),rgba(90,200,216,.12));color:var(--text);box-shadow:inset 0 0 0 1px rgba(229,184,91,.22)}
 .page{max-width:1500px;margin:auto;padding:28px 22px 80px}.hero{padding:30px;border:1px solid rgba(159,176,194,.16);border-radius:26px;background:linear-gradient(145deg,rgba(19,36,56,.9),rgba(10,24,39,.92));box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border:1px solid rgba(229,184,91,.11);border-radius:50%;box-shadow:0 0 0 34px rgba(90,200,216,.025),0 0 0 68px rgba(229,184,91,.02)}.eyebrow{color:var(--gold2);font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:11px}h1,h2,h3{font-family:Georgia,serif}h1{font-size:clamp(32px,4.8vw,56px);line-height:1.04;margin:8px 0 12px}.hero p{max-width:1000px;color:#cad7e4;margin:0}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.badge{display:inline-flex;padding:6px 10px;border-radius:999px;border:1px solid rgba(159,176,194,.16);background:rgba(255,255,255,.04);color:#dce7f1;font-size:11px;font-weight:850}.badge.gold{border-color:rgba(229,184,91,.35);background:rgba(229,184,91,.09);color:#f5deb0}.badge.red{border-color:rgba(255,141,141,.3);background:rgba(255,141,141,.07);color:#ffd0d0}.badge.green{border-color:rgba(111,218,163,.3);background:rgba(111,218,163,.07);color:#d4ffe6}.section{margin-top:28px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:12px}.section-head h2{font-size:30px;margin:2px 0}.section-head p{margin:0;color:var(--muted);max-width:760px}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.card{grid-column:span 4;border:1px solid rgba(159,176,194,.14);border-radius:20px;background:linear-gradient(145deg,rgba(18,34,52,.86),rgba(10,23,37,.86));padding:18px;box-shadow:0 12px 34px rgba(0,0,0,.15)}.card.wide{grid-column:span 6}.card.full{grid-column:1/-1}.card h3{font-size:21px;margin:0 0 8px}.card p,.card li{color:#d0dbe6}.card ul{margin:8px 0 0;padding-left:20px}.card .meta{color:var(--muted);font-size:12px}.callout{border-left:4px solid var(--gold);padding:14px 16px;background:rgba(229,184,91,.07);border-radius:0 14px 14px 0}.danger{border-color:var(--red);background:rgba(255,141,141,.06)}.quick-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid rgba(159,176,194,.18);background:#122236;color:var(--text);border-radius:13px;padding:10px 13px;font-weight:850;cursor:pointer}.btn.primary{background:linear-gradient(135deg,rgba(229,184,91,.22),rgba(90,200,216,.15));border-color:rgba(229,184,91,.3)}.btn:hover{background:#18304a}.rank{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:14px;border-bottom:1px solid rgba(159,176,194,.1)}.rank:last-child{border-bottom:0}.rank-num{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:rgba(229,184,91,.12);color:var(--gold2);border:1px solid rgba(229,184,91,.2)}.rank h3{margin:0 0 4px;font-size:18px}.rank p{margin:0;color:#cbd8e4}.searchbox{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.searchbox input,.searchbox select{background:#0b1725;color:var(--text);border:1px solid rgba(159,176,194,.18);border-radius:12px;padding:10px 12px;outline:none}.searchbox input{min-width:260px;flex:1}.searchbox input:focus,.searchbox select:focus{border-color:rgba(229,184,91,.55);box-shadow:0 0 0 3px rgba(229,184,91,.08)}.region-title{margin:26px 0 10px;padding:10px 14px;border:1px solid rgba(159,176,194,.13);border-radius:14px;background:rgba(90,200,216,.05);display:flex;justify-content:space-between;gap:12px;align-items:center}.region-title h2{margin:0;font-size:26px}.character-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.person{border:1px solid rgba(159,176,194,.12);border-radius:17px;padding:16px;background:rgba(15,29,45,.82)}.person h3{margin:0 0 5px;font-size:19px}.person .role{color:var(--gold2);font-weight:800;font-size:12px}.person p{margin:7px 0 0;color:#cdd9e4}.person details{margin-top:10px}.person summary{cursor:pointer;color:var(--sea);font-weight:800}.subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.subtabs button{border:1px solid rgba(159,176,194,.16);background:#101f31;color:var(--text);padding:9px 12px;border-radius:999px;cursor:pointer;font-weight:800}.subtabs button.active{background:rgba(229,184,91,.15);border-color:rgba(229,184,91,.35);color:var(--gold2)}.tab-panel{display:none}.tab-panel.active{display:block}.table-wrap{overflow:auto;border:1px solid rgba(159,176,194,.12);border-radius:18px;background:rgba(10,23,37,.78)}table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:12px 13px;border-bottom:1px solid rgba(159,176,194,.1);vertical-align:top;text-align:left}th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold2);background:rgba(255,255,255,.025)}td{color:#d3deea}.footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}.mystery{position:relative;overflow:hidden}.mystery:before{content:"?";position:absolute;right:18px;top:-20px;font-family:Georgia,serif;font-size:140px;color:rgba(185,161,255,.07);font-weight:900}.shop-jump{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.shop-jump a{text-decoration:none;padding:13px;border:1px solid rgba(159,176,194,.13);border-radius:14px;background:rgba(255,255,255,.035);font-weight:850}.shop-jump small{display:block;color:var(--muted);font-weight:600;margin-top:3px}
@@ -14,10 +19,665 @@
 .dm-panel h3{color:#f4d68d;margin-top:24px}.dm-panel li{margin:9px 0}.dm-panel>ol,.dm-panel>ul{padding-left:24px}.dm-panel>p{line-height:1.7}.dm-source{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.65 ui-monospace,monospace;padding:20px;border:1px solid #28405a;border-radius:14px;background:#0b1726;color:#cfdeea}.dm-panel .table-wrap{overflow-x:auto}.dm-panel table{width:100%;border-collapse:collapse;min-width:760px}.dm-panel td,.dm-panel th{padding:14px;vertical-align:top;border-bottom:1px solid #28405a;text-align:left}.dm-panel th{color:#f4d68d}
 @media(max-width:760px){.thread-grid{grid-template-columns:1fr}.s18-recap{padding:0 12px 20px}.thread-card{padding:18px}.event{grid-template-columns:30px 1fr;gap:10px}.event-number{width:28px;height:28px}.notice{padding:14px}.thread-card h3{font-size:21px}}
 @media print{.thread-grid{display:block}.thread-card{break-inside:avoid;margin-bottom:14px;background:white;color:black}.thread-field p,.thread-card h3,.thread-footer{color:black}.section-links,.searchbox,.recap-view-controls{display:none}.notice{background:white;color:black;border-color:#777}}
-</style><style>.workspace-tabs{flex-wrap:wrap;overflow:visible}.top-inner{flex-wrap:wrap}.workspace-tabs a{padding:8px 10px}</style></head><body><header class="topbar"><div class="top-inner"><div class="brand"><div class="crest">⚓</div><div class="brand-copy"><strong>The Calling of the Sea</strong><span>Player campaign hub • through Session 18</span></div></div><nav aria-label="Campaign pages" class="workspace-tabs"><a aria-current="page" class="" href="index.html">Players Handbook</a><a href="storylines.html" class="active">Open Storylines</a><a href="characters.html" class="">Characters</a><a href="maps.html" class="">Maps</a><a href="locations.html" class="">Locations &amp; Shops</a><a href="sessions.html" class="">Session Transcripts</a><a href="inventory.html" class="">Ship Inventory Log</a><a href="dm.html">DM Vault</a><a href="http://192.168.68.62:8765/index.html" data-local-mode title="Open the home-network copy">Local Mode</a></nav></div></header><main class="page"><section class="hero"><div class="eyebrow">Player decisions • Through Session 18</div><h1>Open Storylines</h1><p>What the crew knows, what still needs an answer, and a next step you can actually take. Priorities are suggestions; the crew chooses where the story goes.</p><div class="badges"><span class="badge gold">21 unresolved threads</span><span class="badge green">2 completed moments</span><span class="badge">No hidden DM answers</span></div><div class="searchbox"><input id="threadSearch" type="search" aria-label="Search storylines" placeholder="Search a person, place, clue, or question…"><select id="threadCategory" aria-label="Storyline category"><option value="all">All categories</option><option value="Actionable lead">Actionable lead</option><option value="Crew &amp; legacy">Crew &amp; legacy</option><option value="Divine &amp; personal">Divine &amp; personal</option><option value="Immediate">Immediate</option><option value="Resolved moments">Resolved moments</option><option value="World &amp; Keepers">World &amp; Keepers</option></select><select id="threadStatus" aria-label="Storyline status"><option value="open">Unresolved</option><option value="all">All storylines</option><option value="resolved">Completed moments</option></select></div><p id="threadCount" class="thread-count" aria-live="polite"></p></section><section class="section"><div class="thread-grid" id="threadGrid"><article class="thread-card" id="ship-repairs" data-category="Immediate" data-status="open" data-search="ship-repairs Keep the Tempest's Mercy afloat Immediate 1 • Before departure Open The ship survived prolonged submersion and took heavy damage. Schmelly and the hands were ordered to repair it; completion is unconfirmed. Which repairs are essential before sailing? What survived in the hold, and how many supplies and rounds remain? Inspect hull, bilge, rigging, steering, stores, and weapons. Reconcile the ship ledger and arrange proper repairs. Isla • Schmelly • Fred • Flint inventory.html"><div class="thread-meta"><span>1 • Before departure</span><span>Immediate</span><span>Open</span></div><h3>Keep the Tempest's Mercy afloat</h3><div class="thread-field"><b>What we know</b><p>The ship survived prolonged submersion and took heavy damage. Schmelly and the hands were ordered to repair it; completion is unconfirmed.</p></div><div class="thread-field"><b>Still unanswered</b><p>Which repairs are essential before sailing? What survived in the hold, and how many supplies and rounds remain?</p></div><div class="thread-field"><b>A next step</b><p>Inspect hull, bilge, rigging, steering, stores, and weapons. Reconcile the ship ledger and arrange proper repairs.</p></div><div class="thread-footer">Isla • Schmelly • Fred • Flint</div><a class="btn" href="inventory.html">Open related page →</a></article><article class="thread-card" id="wind-favor" data-category="Divine &amp; personal" data-status="open" data-search="wind-favor What did Kaelis's rescue cost? Divine &amp; personal 2 • Fresh consequence Open Thalryx called Cecyll for help. Kaelis accepted quickly, and the prayer ended without explaining the price. Who owes whom? Is there an obligation, condition, or later request? Is Kaelis personally bound? Ask Thalryx or seek Cecyll's answer before agreeing to another favor. Nothing about a life payment or fixed debt has been confirmed. Kaelis • Thalryx • Cecyll characters.html#tab-divine"><div class="thread-meta"><span>2 • Fresh consequence</span><span>Divine &amp; personal</span><span>Open</span></div><h3>What did Kaelis's rescue cost?</h3><div class="thread-field"><b>What we know</b><p>Thalryx called Cecyll for help. Kaelis accepted quickly, and the prayer ended without explaining the price.</p></div><div class="thread-field"><b>Still unanswered</b><p>Who owes whom? Is there an obligation, condition, or later request? Is Kaelis personally bound?</p></div><div class="thread-field"><b>A next step</b><p>Ask Thalryx or seek Cecyll's answer before agreeing to another favor. Nothing about a life payment or fixed debt has been confirmed.</p></div><div class="thread-footer">Kaelis • Thalryx • Cecyll</div><a class="btn" href="characters.html#tab-divine">Open related page →</a></article><article class="thread-card" id="fleet-aftermath" data-category="Immediate" data-status="open" data-search="fleet-aftermath The dock battle's consequences Immediate 3 • Harbor aftermath Open A red-sailed, white-dot Agile Fleet vessel was attacked at the dock. The recorded fight ended with the last enemies killed and loot taken. Who witnessed it? What was the high-command vessel doing here? Will the harbor or Fleet respond? Check casualties, vessel identity, witnesses, and escape options before deciding whether to remain in port. Isla • Tempest Vanguard • Agile Fleet sessions.html?session=18#s18-recap"><div class="thread-meta"><span>3 • Harbor aftermath</span><span>Immediate</span><span>Open</span></div><h3>The dock battle's consequences</h3><div class="thread-field"><b>What we know</b><p>A red-sailed, white-dot Agile Fleet vessel was attacked at the dock. The recorded fight ended with the last enemies killed and loot taken.</p></div><div class="thread-field"><b>Still unanswered</b><p>Who witnessed it? What was the high-command vessel doing here? Will the harbor or Fleet respond?</p></div><div class="thread-field"><b>A next step</b><p>Check casualties, vessel identity, witnesses, and escape options before deciding whether to remain in port.</p></div><div class="thread-footer">Isla • Tempest Vanguard • Agile Fleet</div><a class="btn" href="sessions.html?session=18#s18-recap">Open related page →</a></article><article class="thread-card" id="fleet-packet" data-category="Actionable lead" data-status="open" data-search="fleet-packet Open the Sealed Intelligence Packet Actionable lead 4 • Unopened clue Open A sealed packet was recovered from the defeated Fleet crew. Its actual contents have not been supplied. Which vessel, officer, prisoner, or operation does it identify? Open and read the packet with the DM. Record the actual lead rather than assuming it points at an existing target. Packet bearer • Agile Fleet sessions.html?session=18#s18-loot"><div class="thread-meta"><span>4 • Unopened clue</span><span>Actionable lead</span><span>Open</span></div><h3>Open the Sealed Intelligence Packet</h3><div class="thread-field"><b>What we know</b><p>A sealed packet was recovered from the defeated Fleet crew. Its actual contents have not been supplied.</p></div><div class="thread-field"><b>Still unanswered</b><p>Which vessel, officer, prisoner, or operation does it identify?</p></div><div class="thread-field"><b>A next step</b><p>Open and read the packet with the DM. Record the actual lead rather than assuming it points at an existing target.</p></div><div class="thread-footer">Packet bearer • Agile Fleet</div><a class="btn" href="sessions.html?session=18#s18-loot">Open related page →</a></article><article class="thread-card" id="b12-key" data-category="Actionable lead" data-status="open" data-search="b12-key Find the door for B-12 Actionable lead 5 • New lead Open An officer's key bears B-12 and was linked to the Red Bakken / Red Bakker Inn in the recording. What is the inn's correct name and town? Who uses the room, and what does the key open? Confirm the location, then investigate the matching room or lock. Key bearer • Fleet officer • Inn staff sessions.html?session=18#s18-loot"><div class="thread-meta"><span>5 • New lead</span><span>Actionable lead</span><span>Open</span></div><h3>Find the door for B-12</h3><div class="thread-field"><b>What we know</b><p>An officer's key bears B-12 and was linked to the Red Bakken / Red Bakker Inn in the recording.</p></div><div class="thread-field"><b>Still unanswered</b><p>What is the inn's correct name and town? Who uses the room, and what does the key open?</p></div><div class="thread-field"><b>A next step</b><p>Confirm the location, then investigate the matching room or lock.</p></div><div class="thread-footer">Key bearer • Fleet officer • Inn staff</div><a class="btn" href="sessions.html?session=18#s18-loot">Open related page →</a></article><article class="thread-card" id="marica" data-category="Divine &amp; personal" data-status="open" data-search="marica Marica's anger is still unresolved Divine &amp; personal 6 • Continuing threat Open Marica identified herself as Goddess of the Sea and objected to people helping Thalryx. Cecyll's wind drove her and the wave away temporarily. What specifically is she trying to stop? What does she want from Kaelis, and will she return? Use a future conversation to ask the questions the first encounter left unanswered. Kaelis • Marica • Thalryx characters.html#tab-divine"><div class="thread-meta"><span>6 • Continuing threat</span><span>Divine &amp; personal</span><span>Open</span></div><h3>Marica's anger is still unresolved</h3><div class="thread-field"><b>What we know</b><p>Marica identified herself as Goddess of the Sea and objected to people helping Thalryx. Cecyll's wind drove her and the wave away temporarily.</p></div><div class="thread-field"><b>Still unanswered</b><p>What specifically is she trying to stop? What does she want from Kaelis, and will she return?</p></div><div class="thread-field"><b>A next step</b><p>Use a future conversation to ask the questions the first encounter left unanswered.</p></div><div class="thread-footer">Kaelis • Marica • Thalryx</div><a class="btn" href="characters.html#tab-divine">Open related page →</a></article><article class="thread-card" id="filiorum" data-category="World &amp; Keepers" data-status="open" data-search="filiorum Filiorum, the earthquake, and the Filii Tree World &amp; Keepers 7 • Local investigation Open The wave was stopped. Filiorum remains Kaelis's intended Great Tree region, and an earthquake preceded the tsunami. Good Morrow Juice uses a valuable local root. What caused the earthquake? What damage remains in the town and Tree region? Are these events connected? Check the settlement and investigate the Filii Tree. The party's rescue claim has not established the town's final condition. Kaelis • Filiorum residents locations.html#region-filiorum-silva"><div class="thread-meta"><span>7 • Local investigation</span><span>World &amp; Keepers</span><span>Open</span></div><h3>Filiorum, the earthquake, and the Filii Tree</h3><div class="thread-field"><b>What we know</b><p>The wave was stopped. Filiorum remains Kaelis's intended Great Tree region, and an earthquake preceded the tsunami. Good Morrow Juice uses a valuable local root.</p></div><div class="thread-field"><b>Still unanswered</b><p>What caused the earthquake? What damage remains in the town and Tree region? Are these events connected?</p></div><div class="thread-field"><b>A next step</b><p>Check the settlement and investigate the Filii Tree. The party's rescue claim has not established the town's final condition.</p></div><div class="thread-footer">Kaelis • Filiorum residents</div><a class="btn" href="locations.html#region-filiorum-silva">Open related page →</a></article><article class="thread-card" id="bag-winds" data-category="Divine &amp; personal" data-status="open" data-search="bag-winds The Bag of Winds after the rescue Divine &amp; personal 8 • Secure the artifact Open The bag knocked Kaelis unconscious, then Ember used it to push back the tsunami as Axiom released time. Does it have wind remaining? Is it reusable, and who holds it now? Locate and inspect the bag; agree on custody and ask the DM about remaining uses before treating it as a repeatable solution. Ember • Kaelis • Axiom • Cecyll inventory.html"><div class="thread-meta"><span>8 • Secure the artifact</span><span>Divine &amp; personal</span><span>Open</span></div><h3>The Bag of Winds after the rescue</h3><div class="thread-field"><b>What we know</b><p>The bag knocked Kaelis unconscious, then Ember used it to push back the tsunami as Axiom released time.</p></div><div class="thread-field"><b>Still unanswered</b><p>Does it have wind remaining? Is it reusable, and who holds it now?</p></div><div class="thread-field"><b>A next step</b><p>Locate and inspect the bag; agree on custody and ask the DM about remaining uses before treating it as a repeatable solution.</p></div><div class="thread-footer">Ember • Kaelis • Axiom • Cecyll</div><a class="btn" href="inventory.html">Open related page →</a></article><article class="thread-card" id="crystal" data-category="Divine &amp; personal" data-status="open" data-search="crystal Axiom's blue crystal Divine &amp; personal 9 • Proven power, unknown limits Open Recovered in Session 16; it can stop time and enabled Ember's positioning during the tsunami rescue. What are its duration, reach, limits, recharge, and consequences? How does it relate to Ash's past? Record what the crystal actually did; investigate its history and future use without assuming unlimited time stops. Axiom • Blackwell family characters.html#tab-crew"><div class="thread-meta"><span>9 • Proven power, unknown limits</span><span>Divine &amp; personal</span><span>Open</span></div><h3>Axiom's blue crystal</h3><div class="thread-field"><b>What we know</b><p>Recovered in Session 16; it can stop time and enabled Ember's positioning during the tsunami rescue.</p></div><div class="thread-field"><b>Still unanswered</b><p>What are its duration, reach, limits, recharge, and consequences? How does it relate to Ash's past?</p></div><div class="thread-field"><b>A next step</b><p>Record what the crystal actually did; investigate its history and future use without assuming unlimited time stops.</p></div><div class="thread-footer">Axiom • Blackwell family</div><a class="btn" href="characters.html#tab-crew">Open related page →</a></article><article class="thread-card" id="jeff" data-category="Divine &amp; personal" data-status="open" data-search="jeff Kaelis, Jeff, and the route through Semper Vita Divine &amp; personal 10 • Core personal arc Open Kaelis is still searching for his son. Thalryx, Rhysand, Semper Vita, and the difficult map route remain connected to the investigation. Where is Jeff now? Which accounts are current, and what does Thalryx actually know? Follow the known map and Rhysand leads; separate firsthand evidence from patron promises and old rumors. Kaelis • Jeff • Thalryx • Rhysand • Brooke • Magnus maps.html#loc-semper-vita"><div class="thread-meta"><span>10 • Core personal arc</span><span>Divine &amp; personal</span><span>Open</span></div><h3>Kaelis, Jeff, and the route through Semper Vita</h3><div class="thread-field"><b>What we know</b><p>Kaelis is still searching for his son. Thalryx, Rhysand, Semper Vita, and the difficult map route remain connected to the investigation.</p></div><div class="thread-field"><b>Still unanswered</b><p>Where is Jeff now? Which accounts are current, and what does Thalryx actually know?</p></div><div class="thread-field"><b>A next step</b><p>Follow the known map and Rhysand leads; separate firsthand evidence from patron promises and old rumors.</p></div><div class="thread-footer">Kaelis • Jeff • Thalryx • Rhysand • Brooke • Magnus</div><a class="btn" href="maps.html#loc-semper-vita">Open related page →</a></article><article class="thread-card" id="deadwater" data-category="Divine &amp; personal" data-status="open" data-search="deadwater Darius's watchers, Bart, and missing Kane Divine &amp; personal 11 • Active pursuit Open Darius sent Bart and Kane to watch Isla. Kane is missing. A contact was hired to hunt Bart for 200 gp, with 100 gp paid up front. Where is Kane? What did Bart mean by 'Blue Lizard'? Has the hunter found Bart, and what does Darius really want? Check the hunter's progress and pursue the Blue Lizard clue. The remaining 100 gp is due after proof of the kill. Isla • Darius • Bart • Kane • Hired contact characters.html#tab-regions"><div class="thread-meta"><span>11 • Active pursuit</span><span>Divine &amp; personal</span><span>Open</span></div><h3>Darius's watchers, Bart, and missing Kane</h3><div class="thread-field"><b>What we know</b><p>Darius sent Bart and Kane to watch Isla. Kane is missing. A contact was hired to hunt Bart for 200 gp, with 100 gp paid up front.</p></div><div class="thread-field"><b>Still unanswered</b><p>Where is Kane? What did Bart mean by 'Blue Lizard'? Has the hunter found Bart, and what does Darius really want?</p></div><div class="thread-field"><b>A next step</b><p>Check the hunter's progress and pursue the Blue Lizard clue. The remaining 100 gp is due after proof of the kill.</p></div><div class="thread-footer">Isla • Darius • Bart • Kane • Hired contact</div><a class="btn" href="characters.html#tab-regions">Open related page →</a></article><article class="thread-card" id="keepers" data-category="World &amp; Keepers" data-status="open" data-search="keepers The Great Trees, Keepers, and dragon seal World &amp; Keepers 12 • Campaign spine Open Ember is a formal Level 1 Stars Keeper. Axiom is Tree-chosen and Mayor of Lorell, but is not formally a Keeper. The fivefold system and monastery remain unresolved. How do the Trees, central stump, monastery, blue dragon, white dragon, and Eep fit together? What oaths still need Keepers? Compare known Tree and dragon clues, and follow the remaining Keeper objectives. Avoid assuming the full seal's purpose has been revealed. Ember • Axiom • Keepers • Dragons maps.html#loc-wendel-wood"><div class="thread-meta"><span>12 • Campaign spine</span><span>World &amp; Keepers</span><span>Open</span></div><h3>The Great Trees, Keepers, and dragon seal</h3><div class="thread-field"><b>What we know</b><p>Ember is a formal Level 1 Stars Keeper. Axiom is Tree-chosen and Mayor of Lorell, but is not formally a Keeper. The fivefold system and monastery remain unresolved.</p></div><div class="thread-field"><b>Still unanswered</b><p>How do the Trees, central stump, monastery, blue dragon, white dragon, and Eep fit together? What oaths still need Keepers?</p></div><div class="thread-field"><b>A next step</b><p>Compare known Tree and dragon clues, and follow the remaining Keeper objectives. Avoid assuming the full seal's purpose has been revealed.</p></div><div class="thread-footer">Ember • Axiom • Keepers • Dragons</div><a class="btn" href="maps.html#loc-wendel-wood">Open related page →</a></article><article class="thread-card" id="nancy" data-category="Divine &amp; personal" data-status="open" data-search="nancy Ember and Nancy's rewritten magic Divine &amp; personal 13 • Family mystery Open Brathe confirmed that Ember's childhood magic book used Nancy Blackwell's handwriting and techniques that effectively rewrote magic. Ember's bond reacts to some choices. What did Nancy change, what survives of her work, and why is it important now? Seek a readable fragment or family account and compare it with what Ember has experienced. Ember • Brathe • Axiom • Nancy's records characters.html#tab-families"><div class="thread-meta"><span>13 • Family mystery</span><span>Divine &amp; personal</span><span>Open</span></div><h3>Ember and Nancy's rewritten magic</h3><div class="thread-field"><b>What we know</b><p>Brathe confirmed that Ember's childhood magic book used Nancy Blackwell's handwriting and techniques that effectively rewrote magic. Ember's bond reacts to some choices.</p></div><div class="thread-field"><b>Still unanswered</b><p>What did Nancy change, what survives of her work, and why is it important now?</p></div><div class="thread-field"><b>A next step</b><p>Seek a readable fragment or family account and compare it with what Ember has experienced.</p></div><div class="thread-footer">Ember • Brathe • Axiom • Nancy's records</div><a class="btn" href="characters.html#tab-families">Open related page →</a></article><article class="thread-card" id="prisonia" data-category="Actionable lead" data-status="open" data-search="prisonia Prisonia Isle and Arnold Bernard Actionable lead 14 • Destination lead Open An informant placed Flint's former bounty claimant on Prisonia with about 100,000 silver left. Blackwell records, faction documents, a magical cage, and a rumored captive also point there. Is the tip reliable? What evidence and prisoners are there, and how can the crew enter safely? Validate Bernard's location and plan a route. Do not assume the new packet or B-12 key already confirms a Prisonia connection. Flint • Arnold Bernard • Hooded informant locations.html#region-prisonia-fortress"><div class="thread-meta"><span>14 • Destination lead</span><span>Actionable lead</span><span>Open</span></div><h3>Prisonia Isle and Arnold Bernard</h3><div class="thread-field"><b>What we know</b><p>An informant placed Flint's former bounty claimant on Prisonia with about 100,000 silver left. Blackwell records, faction documents, a magical cage, and a rumored captive also point there.</p></div><div class="thread-field"><b>Still unanswered</b><p>Is the tip reliable? What evidence and prisoners are there, and how can the crew enter safely?</p></div><div class="thread-field"><b>A next step</b><p>Validate Bernard's location and plan a route. Do not assume the new packet or B-12 key already confirms a Prisonia connection.</p></div><div class="thread-footer">Flint • Arnold Bernard • Hooded informant</div><a class="btn" href="locations.html#region-prisonia-fortress">Open related page →</a></article><article class="thread-card" id="lorell" data-category="World &amp; Keepers" data-status="open" data-search="lorell Lorell's school and recovery World &amp; Keepers 15 • Ongoing commitment Open The 500 gp school project is funded and Argyle is building it. Axiom remains Mayor. How is construction progressing? Who can teach, and what do farms, jobs, and the town economy need next? Return for an update or send a concrete instruction through an established contact. Axiom • Argyle • Tabin • Lorell residents locations.html#region-lorell"><div class="thread-meta"><span>15 • Ongoing commitment</span><span>World &amp; Keepers</span><span>Open</span></div><h3>Lorell's school and recovery</h3><div class="thread-field"><b>What we know</b><p>The 500 gp school project is funded and Argyle is building it. Axiom remains Mayor.</p></div><div class="thread-field"><b>Still unanswered</b><p>How is construction progressing? Who can teach, and what do farms, jobs, and the town economy need next?</p></div><div class="thread-field"><b>A next step</b><p>Return for an update or send a concrete instruction through an established contact.</p></div><div class="thread-footer">Axiom • Argyle • Tabin • Lorell residents</div><a class="btn" href="locations.html#region-lorell">Open related page →</a></article><article class="thread-card" id="brathe" data-category="Crew &amp; legacy" data-status="open" data-search="brathe Does Brathe join the ship? Crew &amp; legacy 16 • Crew decision Open Brathe offered to serve as blacksmith. Isla considered a trial if Axiom agreed; Brathe boarded without permission and was ordered off in Session 17. Does Axiom consent, and what duties and boundaries would a trial include? Make the decision together. The Session 18 repair order does not automatically make Brathe a crew member. Isla • Axiom • Ember • Brathe characters.html#tab-crew"><div class="thread-meta"><span>16 • Crew decision</span><span>Crew &amp; legacy</span><span>Open</span></div><h3>Does Brathe join the ship?</h3><div class="thread-field"><b>What we know</b><p>Brathe offered to serve as blacksmith. Isla considered a trial if Axiom agreed; Brathe boarded without permission and was ordered off in Session 17.</p></div><div class="thread-field"><b>Still unanswered</b><p>Does Axiom consent, and what duties and boundaries would a trial include?</p></div><div class="thread-field"><b>A next step</b><p>Make the decision together. The Session 18 repair order does not automatically make Brathe a crew member.</p></div><div class="thread-footer">Isla • Axiom • Ember • Brathe</div><a class="btn" href="characters.html#tab-crew">Open related page →</a></article><article class="thread-card" id="living-maps" data-category="World &amp; Keepers" data-status="open" data-search="living-maps Living maps, Brooke, Rhysand, and Magnus World &amp; Keepers 17 • Unfinished map mystery Open Hidden ink links Brooke / B-Ossis, Semper Vita, and Grey More. Siobhan's map legacy, Richard's copies, Brooke's resentment, and Rhysand's story remain unresolved. Which maps can be trusted? Why do accounts conflict, and what remains of the route? Compare the existing fragments and dated accounts. Keep conflicting reports open until there is current evidence. Brooke • Rhysand • Magnus • Ossis family maps.html#loc-semper-vita"><div class="thread-meta"><span>17 • Unfinished map mystery</span><span>World &amp; Keepers</span><span>Open</span></div><h3>Living maps, Brooke, Rhysand, and Magnus</h3><div class="thread-field"><b>What we know</b><p>Hidden ink links Brooke / B-Ossis, Semper Vita, and Grey More. Siobhan's map legacy, Richard's copies, Brooke's resentment, and Rhysand's story remain unresolved.</p></div><div class="thread-field"><b>Still unanswered</b><p>Which maps can be trusted? Why do accounts conflict, and what remains of the route?</p></div><div class="thread-field"><b>A next step</b><p>Compare the existing fragments and dated accounts. Keep conflicting reports open until there is current evidence.</p></div><div class="thread-footer">Brooke • Rhysand • Magnus • Ossis family</div><a class="btn" href="maps.html#loc-semper-vita">Open related page →</a></article><article class="thread-card" id="jun" data-category="Crew &amp; legacy" data-status="open" data-search="jun Jun's blade legacy Crew &amp; legacy 18 • Personal lead Open Jun carries Dashule Lepravonci's blade. Hongbin and the wider legacy still matter; associated relic questions remain unfinished. What does Hongbin know, and what obligations or missing pieces accompany the blade? Follow Jun's established family and relic leads when the crew can make room for them. Jun Taka • Hongbin • Dashule's legacy characters.html#tab-crew"><div class="thread-meta"><span>18 • Personal lead</span><span>Crew &amp; legacy</span><span>Open</span></div><h3>Jun's blade legacy</h3><div class="thread-field"><b>What we know</b><p>Jun carries Dashule Lepravonci's blade. Hongbin and the wider legacy still matter; associated relic questions remain unfinished.</p></div><div class="thread-field"><b>Still unanswered</b><p>What does Hongbin know, and what obligations or missing pieces accompany the blade?</p></div><div class="thread-field"><b>A next step</b><p>Follow Jun's established family and relic leads when the crew can make room for them.</p></div><div class="thread-footer">Jun Taka • Hongbin • Dashule's legacy</div><a class="btn" href="characters.html#tab-crew">Open related page →</a></article><article class="thread-card" id="gutr" data-category="Crew &amp; legacy" data-status="open" data-search="gutr GUTR's twin tails and belonging Crew &amp; legacy 19 • Personal mystery Open GUTR's two tails, old ring, and connection to Bicaudis imagery remain unexplained. What do those symbols mean for his identity and history? Bring the ring and known imagery to someone who can interpret them; give GUTR a chance to choose what family and belonging mean. GUTR characters.html#tab-crew"><div class="thread-meta"><span>19 • Personal mystery</span><span>Crew &amp; legacy</span><span>Open</span></div><h3>GUTR's twin tails and belonging</h3><div class="thread-field"><b>What we know</b><p>GUTR's two tails, old ring, and connection to Bicaudis imagery remain unexplained.</p></div><div class="thread-field"><b>Still unanswered</b><p>What do those symbols mean for his identity and history?</p></div><div class="thread-field"><b>A next step</b><p>Bring the ring and known imagery to someone who can interpret them; give GUTR a chance to choose what family and belonging mean.</p></div><div class="thread-footer">GUTR</div><a class="btn" href="characters.html#tab-crew">Open related page →</a></article><article class="thread-card" id="ash" data-category="Crew &amp; legacy" data-status="open" data-search="ash Ash, Gideon, and Axiom's transformation Crew &amp; legacy 20 • Origin mystery Open Axiom's human identity was Ash Blackwell. Gideon and Elias Crowe are part of the history behind his transformation and damaged memories. Why was Ash chosen? What did Gideon understand, and where do the missing memories fit? Compare recovered memories with records in established locations; motives and final answers remain unproven. Axiom • Gideon • Elias Crowe characters.html#tab-crew"><div class="thread-meta"><span>20 • Origin mystery</span><span>Crew &amp; legacy</span><span>Open</span></div><h3>Ash, Gideon, and Axiom's transformation</h3><div class="thread-field"><b>What we know</b><p>Axiom's human identity was Ash Blackwell. Gideon and Elias Crowe are part of the history behind his transformation and damaged memories.</p></div><div class="thread-field"><b>Still unanswered</b><p>Why was Ash chosen? What did Gideon understand, and where do the missing memories fit?</p></div><div class="thread-field"><b>A next step</b><p>Compare recovered memories with records in established locations; motives and final answers remain unproven.</p></div><div class="thread-footer">Axiom • Gideon • Elias Crowe</div><a class="btn" href="characters.html#tab-crew">Open related page →</a></article><article class="thread-card" id="finnegan" data-category="Crew &amp; legacy" data-status="open" data-search="finnegan Finnegan's journal and missing-wife clue Crew &amp; legacy 21 • Older unresolved lead Open The early Dolphinia journal and family clue has not received a confirmed resolution. What happened to the woman in Finnegan's family story, and can the crew find reliable evidence? Revisit the journal and the original account when returning to Dolphinia. Finnegan • Dolphinia contacts locations.html#region-dolphinia"><div class="thread-meta"><span>21 • Older unresolved lead</span><span>Crew &amp; legacy</span><span>Open</span></div><h3>Finnegan's journal and missing-wife clue</h3><div class="thread-field"><b>What we know</b><p>The early Dolphinia journal and family clue has not received a confirmed resolution.</p></div><div class="thread-field"><b>Still unanswered</b><p>What happened to the woman in Finnegan's family story, and can the crew find reliable evidence?</p></div><div class="thread-field"><b>A next step</b><p>Revisit the journal and the original account when returning to Dolphinia.</p></div><div class="thread-footer">Finnegan • Dolphinia contacts</div><a class="btn" href="locations.html#region-dolphinia">Open related page →</a></article><article class="thread-card" id="wave-stopped" data-category="Resolved moments" data-status="resolved" data-search="wave-stopped The immediate tsunami escape Resolved moments Session 18 result Resolved moment The Bag of Winds pushed the tsunami and Marica away, allowing the Tempest's Mercy to survive and head back toward Filiorum. The wave's immediate threat was overcome. Marica's motives, the earthquake, town damage, and ship repairs are still tracked separately. Use this as the completed milestone; continue the related open threads above. Ember • Axiom • Kaelis • Crew sessions.html?session=18#s18-recap"><div class="thread-meta"><span>Session 18 result</span><span>Resolved moments</span><span>Resolved moment</span></div><h3>The immediate tsunami escape</h3><div class="thread-field"><b>What we know</b><p>The Bag of Winds pushed the tsunami and Marica away, allowing the Tempest's Mercy to survive and head back toward Filiorum.</p></div><div class="thread-field"><b>Still unanswered</b><p>The wave's immediate threat was overcome. Marica's motives, the earthquake, town damage, and ship repairs are still tracked separately.</p></div><div class="thread-field"><b>A next step</b><p>Use this as the completed milestone; continue the related open threads above.</p></div><div class="thread-footer">Ember • Axiom • Kaelis • Crew</div><a class="btn" href="sessions.html?session=18#s18-recap">Open related page →</a></article><article class="thread-card" id="dock-victory" data-category="Resolved moments" data-status="resolved" data-search="dock-victory The recorded dock fight Resolved moments Session 18 result Resolved moment The final enemies were killed and loot rolls followed. The local combat ended. The Fleet conflict and harbor consequences remain open even though this battle was won. Recover, inspect the ship, and follow the packet and key. Tempest Vanguard sessions.html?session=18#s18-loot"><div class="thread-meta"><span>Session 18 result</span><span>Resolved moments</span><span>Resolved moment</span></div><h3>The recorded dock fight</h3><div class="thread-field"><b>What we know</b><p>The final enemies were killed and loot rolls followed. The local combat ended.</p></div><div class="thread-field"><b>Still unanswered</b><p>The Fleet conflict and harbor consequences remain open even though this battle was won.</p></div><div class="thread-field"><b>A next step</b><p>Recover, inspect the ship, and follow the packet and key.</p></div><div class="thread-footer">Tempest Vanguard</div><a class="btn" href="sessions.html?session=18#s18-loot">Open related page →</a></article></div><p class="empty-threads" id="threadEmpty" hidden>No storylines match these filters.</p></section><div class="footer">THE CALLING OF THE SEA • PLAYER STORYLINE REGISTER • THROUGH SESSION 18</div></main><script>
+</style><style>.workspace-tabs{flex-wrap:wrap;overflow:visible}.top-inner{flex-wrap:wrap}.workspace-tabs a{padding:8px 10px}</style></head>
+<body>
+<header class="topbar">
+<div class="top-inner">
+<div class="brand">
+<div class="crest">⚓</div>
+<div class="brand-copy">
+<strong>The Calling of the Sea</strong>
+<span>Player campaign hub • through Session 19</span>
+</div>
+</div>
+<nav aria-label="Campaign pages" class="workspace-tabs">
+<a aria-current="page" class="" href="index.html">Players Handbook</a>
+<a href="storylines.html" class="active">Open Storylines</a>
+<a href="characters.html" class="">Characters</a>
+<a href="maps.html" class="">Maps</a>
+<a href="locations.html" class="">Locations &amp; Shops</a>
+<a href="sessions.html" class="">Session Transcripts</a>
+<a href="inventory.html" class="">Ship Inventory Log</a>
+<a href="dm.html">DM Vault</a>
+<a href="http://192.168.68.62:8765/index.html" data-local-mode title="Open the home-network copy">Local Mode</a>
+</nav>
+</div>
+</header>
+<main class="page">
+<section class="hero">
+<div class="eyebrow">Player decisions • Through Session 19</div>
+<h1>Open Storylines</h1>
+<p>What the crew knows, what still needs an answer, and a next step you can actually take. Priorities are suggestions; the crew chooses where the story goes.</p>
+<div class="badges">
+<span class="badge gold">23 unresolved threads</span>
+<span class="badge green">4 completed moments</span>
+<span class="badge">No hidden DM answers</span>
+</div>
+<div class="searchbox">
+<input id="threadSearch" type="search" aria-label="Search storylines" placeholder="Search a person, place, clue, or question…">
+<select id="threadCategory" aria-label="Storyline category">
+<option value="all">All categories</option>
+<option value="Actionable lead">Actionable lead</option>
+<option value="Crew &amp; legacy">Crew &amp; legacy</option>
+<option value="Divine &amp; personal">Divine &amp; personal</option>
+<option value="Immediate">Immediate</option>
+<option value="Resolved moments">Resolved moments</option>
+<option value="World &amp; Keepers">World &amp; Keepers</option>
+</select>
+<select id="threadStatus" aria-label="Storyline status">
+<option value="open">Unresolved</option>
+<option value="all">All storylines</option>
+<option value="resolved">Completed moments</option>
+</select>
+</div>
+<p id="threadCount" class="thread-count" aria-live="polite">
+</p>
+</section>
+<section class="section">
+<div class="thread-grid" id="threadGrid">
+<article class="thread-card" id="ship-repairs" data-category="Resolved moments" data-status="resolved" data-search="ship-repairs The Tempest's Mercy was repaired Resolved moments Session 19 result Resolved moment Nineteen holes and the fire-scorched deck were repaired in Filiorum. The crew declared the ship ready to sail. Ammunition and some repair-material totals remain bookkeeping questions, but the emergency repair itself is complete. Keep the inventory ledger current before the next departure. Isla • Schmelly • Fred • repair crew inventory.html">
+<div class="thread-meta">
+<span>Session 19 result</span>
+<span>Resolved moments</span>
+<span>Resolved moment</span>
+</div>
+<h3>The Tempest's Mercy was repaired</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Nineteen holes and the fire-scorched deck were repaired in Filiorum. The crew declared the ship ready to sail.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Ammunition and some repair-material totals remain bookkeeping questions, but the emergency repair itself is complete.</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Keep the inventory ledger current before the next departure.</p>
+</div>
+<div class="thread-footer">Isla • Schmelly • Fred • repair crew</div>
+<a class="btn" href="inventory.html">Open related page →</a>
+</article>
+<article class="thread-card" id="wind-favor" data-category="Divine &amp; personal" data-status="open" data-search="wind-favor What did Kaelis's rescue cost? Divine &amp; personal 2 • Fresh consequence Open Thalryx called Cecyll for help. Kaelis accepted quickly, and the prayer ended without explaining the price. Who owes whom? Is there an obligation, condition, or later request? Is Kaelis personally bound? Ask Thalryx or seek Cecyll's answer before agreeing to another favor. Nothing about a life payment or fixed debt has been confirmed. Kaelis • Thalryx • Cecyll characters.html#tab-divine">
+<div class="thread-meta">
+<span>2 • Fresh consequence</span>
+<span>Divine &amp; personal</span>
+<span>Open</span>
+</div>
+<h3>What did Kaelis's rescue cost?</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Thalryx called Cecyll for help. Kaelis accepted quickly, and the prayer ended without explaining the price.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Who owes whom? Is there an obligation, condition, or later request? Is Kaelis personally bound?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Ask Thalryx or seek Cecyll's answer before agreeing to another favor. Nothing about a life payment or fixed debt has been confirmed.</p>
+</div>
+<div class="thread-footer">Kaelis • Thalryx • Cecyll</div>
+<a class="btn" href="characters.html#tab-divine">Open related page →</a>
+</article>
+<article class="thread-card" id="fleet-aftermath" data-category="Immediate" data-status="open" data-search="fleet-aftermath The dock battle's consequences Immediate 3 • Harbor aftermath Open A red-sailed, white-dot Agile Fleet vessel was attacked at the dock. The recorded fight ended with the last enemies killed and loot taken. Who witnessed it? What was the high-command vessel doing here? Will the harbor or Fleet respond? Check casualties, vessel identity, witnesses, and escape options before deciding whether to remain in port. Isla • Tempest Vanguard • Agile Fleet sessions.html?session=18#s18-recap">
+<div class="thread-meta">
+<span>3 • Harbor aftermath</span>
+<span>Immediate</span>
+<span>Open</span>
+</div>
+<h3>The dock battle's consequences</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>A red-sailed, white-dot Agile Fleet vessel was attacked at the dock. The recorded fight ended with the last enemies killed and loot taken.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Who witnessed it? What was the high-command vessel doing here? Will the harbor or Fleet respond?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Check casualties, vessel identity, witnesses, and escape options before deciding whether to remain in port.</p>
+</div>
+<div class="thread-footer">Isla • Tempest Vanguard • Agile Fleet</div>
+<a class="btn" href="sessions.html?session=18#s18-recap">Open related page →</a>
+</article>
+<article class="thread-card" id="fleet-packet" data-category="Actionable lead" data-status="open" data-search="fleet-packet Open the Sealed Intelligence Packet Actionable lead 4 • Unopened clue Open A sealed packet was recovered from the defeated Fleet crew. Its actual contents have not been supplied. Which vessel, officer, prisoner, or operation does it identify? Open and read the packet with the DM. Record the actual lead rather than assuming it points at an existing target. Packet bearer • Agile Fleet sessions.html?session=18#s18-loot">
+<div class="thread-meta">
+<span>4 • Unopened clue</span>
+<span>Actionable lead</span>
+<span>Open</span>
+</div>
+<h3>Open the Sealed Intelligence Packet</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>A sealed packet was recovered from the defeated Fleet crew. Its actual contents have not been supplied.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Which vessel, officer, prisoner, or operation does it identify?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Open and read the packet with the DM. Record the actual lead rather than assuming it points at an existing target.</p>
+</div>
+<div class="thread-footer">Packet bearer • Agile Fleet</div>
+<a class="btn" href="sessions.html?session=18#s18-loot">Open related page →</a>
+</article>
+<article class="thread-card" id="b12-key" data-category="Actionable lead" data-status="open" data-search="b12-key Find the door for B-12 Actionable lead 5 • New lead Open An officer's key bears B-12 and was linked to the Red Bakken / Red Bakker Inn in the recording. What is the inn's correct name and town? Who uses the room, and what does the key open? Confirm the location, then investigate the matching room or lock. Key bearer • Fleet officer • Inn staff sessions.html?session=18#s18-loot">
+<div class="thread-meta">
+<span>5 • New lead</span>
+<span>Actionable lead</span>
+<span>Open</span>
+</div>
+<h3>Find the door for B-12</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>An officer's key bears B-12 and was linked to the Red Bakken / Red Bakker Inn in the recording.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What is the inn's correct name and town? Who uses the room, and what does the key open?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Confirm the location, then investigate the matching room or lock.</p>
+</div>
+<div class="thread-footer">Key bearer • Fleet officer • Inn staff</div>
+<a class="btn" href="sessions.html?session=18#s18-loot">Open related page →</a>
+</article>
+<article class="thread-card" id="marica" data-category="Divine &amp; personal" data-status="open" data-search="marica Marica's anger is still unresolved Divine &amp; personal 6 • Continuing threat Open Marica identified herself as Goddess of the Sea and objected to people helping Thalryx. Cecyll's wind drove her and the wave away temporarily. What specifically is she trying to stop? What does she want from Kaelis, and will she return? Use a future conversation to ask the questions the first encounter left unanswered. Kaelis • Marica • Thalryx characters.html#tab-divine">
+<div class="thread-meta">
+<span>6 • Continuing threat</span>
+<span>Divine &amp; personal</span>
+<span>Open</span>
+</div>
+<h3>Marica's anger is still unresolved</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Marica identified herself as Goddess of the Sea and objected to people helping Thalryx. Cecyll's wind drove her and the wave away temporarily.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What specifically is she trying to stop? What does she want from Kaelis, and will she return?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Use a future conversation to ask the questions the first encounter left unanswered.</p>
+</div>
+<div class="thread-footer">Kaelis • Marica • Thalryx</div>
+<a class="btn" href="characters.html#tab-divine">Open related page →</a>
+</article>
+<article class="thread-card" id="filiorum" data-category="World &amp; Keepers" data-status="open" data-search="filiorum Vincent Drake, the sacrifices, and the Filiorum Tree World &amp; Keepers 7 • Local investigation Open Filiorum survived and celebrates the Tree and Vincent Drake. The Tree told Kaelis that Vincent is siphoning it and asked him to end the siphoning. Isla found a worn red patch and blood residue near its base. Vincent and residents described a crisis ritual involving one willing person and one beast. What is actually being drawn from the Tree, why is Vincent doing it, and what did the latest ritual accomplish? Investigate the Tree, question Vincent, and separate witnessed facts from public belief before acting. Kaelis • Isla • Vincent Drake • Filiorum residents locations.html#region-filiorum-silva">
+<div class="thread-meta">
+<span>7 • Local investigation</span>
+<span>World &amp; Keepers</span>
+<span>Open</span>
+</div>
+<h3>Vincent Drake, the sacrifices, and the Filiorum Tree</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Filiorum survived and celebrates the Tree and Vincent Drake. The Tree told Kaelis that Vincent is siphoning it and asked him to end the siphoning. Isla found a worn red patch and blood residue near its base. Vincent and residents described a crisis ritual involving one willing person and one beast.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What is actually being drawn from the Tree, why is Vincent doing it, and what did the latest ritual accomplish?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Investigate the Tree, question Vincent, and separate witnessed facts from public belief before acting.</p>
+</div>
+<div class="thread-footer">Kaelis • Isla • Vincent Drake • Filiorum residents</div>
+<a class="btn" href="locations.html#region-filiorum-silva">Open related page →</a>
+</article>
+<article class="thread-card" id="bag-winds" data-category="Divine &amp; personal" data-status="open" data-search="bag-winds The Bag of Winds after the rescue Divine &amp; personal 8 • Secure the artifact Open The bag knocked Kaelis unconscious, then Ember used it to push back the tsunami as Axiom released time. Does it have wind remaining? Is it reusable, and who holds it now? Locate and inspect the bag; agree on custody and ask the DM about remaining uses before treating it as a repeatable solution. Ember • Kaelis • Axiom • Cecyll inventory.html">
+<div class="thread-meta">
+<span>8 • Secure the artifact</span>
+<span>Divine &amp; personal</span>
+<span>Open</span>
+</div>
+<h3>The Bag of Winds after the rescue</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>The bag knocked Kaelis unconscious, then Ember used it to push back the tsunami as Axiom released time.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Does it have wind remaining? Is it reusable, and who holds it now?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Locate and inspect the bag; agree on custody and ask the DM about remaining uses before treating it as a repeatable solution.</p>
+</div>
+<div class="thread-footer">Ember • Kaelis • Axiom • Cecyll</div>
+<a class="btn" href="inventory.html">Open related page →</a>
+</article>
+<article class="thread-card" id="crystal" data-category="Divine &amp; personal" data-status="open" data-search="crystal Axiom's blue crystal Divine &amp; personal 9 • Proven power, unknown limits Open Recovered in Session 16; it can stop time and enabled Ember's positioning during the tsunami rescue. What are its duration, reach, limits, recharge, and consequences? How does it relate to Ash's past? Record what the crystal actually did; investigate its history and future use without assuming unlimited time stops. Axiom • Blackwell family characters.html#tab-crew">
+<div class="thread-meta">
+<span>9 • Proven power, unknown limits</span>
+<span>Divine &amp; personal</span>
+<span>Open</span>
+</div>
+<h3>Axiom's blue crystal</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Recovered in Session 16; it can stop time and enabled Ember's positioning during the tsunami rescue.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What are its duration, reach, limits, recharge, and consequences? How does it relate to Ash's past?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Record what the crystal actually did; investigate its history and future use without assuming unlimited time stops.</p>
+</div>
+<div class="thread-footer">Axiom • Blackwell family</div>
+<a class="btn" href="characters.html#tab-crew">Open related page →</a>
+</article>
+<article class="thread-card" id="jeff" data-category="Divine &amp; personal" data-status="open" data-search="jeff Kaelis, Jeff, and the route through Semper Vita Divine &amp; personal 10 • Core personal arc Open Kaelis is still searching for his son. Thalryx, Rhysand, Semper Vita, and the difficult map route remain connected to the investigation. Where is Jeff now? Which accounts are current, and what does Thalryx actually know? Follow the known map and Rhysand leads; separate firsthand evidence from patron promises and old rumors. Kaelis • Jeff • Thalryx • Rhysand • Brooke • Magnus maps.html#loc-semper-vita">
+<div class="thread-meta">
+<span>10 • Core personal arc</span>
+<span>Divine &amp; personal</span>
+<span>Open</span>
+</div>
+<h3>Kaelis, Jeff, and the route through Semper Vita</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Kaelis is still searching for his son. Thalryx, Rhysand, Semper Vita, and the difficult map route remain connected to the investigation.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Where is Jeff now? Which accounts are current, and what does Thalryx actually know?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Follow the known map and Rhysand leads; separate firsthand evidence from patron promises and old rumors.</p>
+</div>
+<div class="thread-footer">Kaelis • Jeff • Thalryx • Rhysand • Brooke • Magnus</div>
+<a class="btn" href="maps.html#loc-semper-vita">Open related page →</a>
+</article>
+<article class="thread-card" id="deadwater" data-category="Divine &amp; personal" data-status="open" data-search="deadwater Darius's watchers, Bart, and missing Kane Divine &amp; personal 11 • Active pursuit Open Darius sent Bart and Kane to watch Isla. Kane is missing. A contact was hired to hunt Bart for 200 gp, with 100 gp paid up front. Where is Kane? What did Bart mean by 'Blue Lizard'? Has the hunter found Bart, and what does Darius really want? Check the hunter's progress and pursue the Blue Lizard clue. The remaining 100 gp is due after proof of the kill. Isla • Darius • Bart • Kane • Hired contact characters.html#tab-regions">
+<div class="thread-meta">
+<span>11 • Active pursuit</span>
+<span>Divine &amp; personal</span>
+<span>Open</span>
+</div>
+<h3>Darius's watchers, Bart, and missing Kane</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Darius sent Bart and Kane to watch Isla. Kane is missing. A contact was hired to hunt Bart for 200 gp, with 100 gp paid up front.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Where is Kane? What did Bart mean by 'Blue Lizard'? Has the hunter found Bart, and what does Darius really want?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Check the hunter's progress and pursue the Blue Lizard clue. The remaining 100 gp is due after proof of the kill.</p>
+</div>
+<div class="thread-footer">Isla • Darius • Bart • Kane • Hired contact</div>
+<a class="btn" href="characters.html#tab-regions">Open related page →</a>
+</article>
+<article class="thread-card" id="keepers" data-category="World &amp; Keepers" data-status="open" data-search="keepers The Great Trees, Keepers, and dragon seal World &amp; Keepers 12 • Campaign spine Open Ember is a formal Level 1 Stars Keeper. Axiom is Tree-chosen and Mayor of Lorell, but is not formally a Keeper. The fivefold system and monastery remain unresolved. How do the Trees, central stump, monastery, blue dragon, white dragon, and Eep fit together? What oaths still need Keepers? Compare known Tree and dragon clues, and follow the remaining Keeper objectives. Avoid assuming the full seal's purpose has been revealed. Ember • Axiom • Keepers • Dragons maps.html#loc-wendel-wood">
+<div class="thread-meta">
+<span>12 • Campaign spine</span>
+<span>World &amp; Keepers</span>
+<span>Open</span>
+</div>
+<h3>The Great Trees, Keepers, and dragon seal</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Ember is a formal Level 1 Stars Keeper. Axiom is Tree-chosen and Mayor of Lorell, but is not formally a Keeper. The fivefold system and monastery remain unresolved.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>How do the Trees, central stump, monastery, blue dragon, white dragon, and Eep fit together? What oaths still need Keepers?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Compare known Tree and dragon clues, and follow the remaining Keeper objectives. Avoid assuming the full seal's purpose has been revealed.</p>
+</div>
+<div class="thread-footer">Ember • Axiom • Keepers • Dragons</div>
+<a class="btn" href="maps.html#loc-wendel-wood">Open related page →</a>
+</article>
+<article class="thread-card" id="nancy" data-category="Divine &amp; personal" data-status="open" data-search="nancy Ember and Nancy's rewritten magic Divine &amp; personal 13 • Family mystery Open Brathe confirmed that Ember's childhood magic book used Nancy Blackwell's handwriting and techniques that effectively rewrote magic. Ember's bond reacts to some choices. What did Nancy change, what survives of her work, and why is it important now? Seek a readable fragment or family account and compare it with what Ember has experienced. Ember • Brathe • Axiom • Nancy's records characters.html#tab-families">
+<div class="thread-meta">
+<span>13 • Family mystery</span>
+<span>Divine &amp; personal</span>
+<span>Open</span>
+</div>
+<h3>Ember and Nancy's rewritten magic</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Brathe confirmed that Ember's childhood magic book used Nancy Blackwell's handwriting and techniques that effectively rewrote magic. Ember's bond reacts to some choices.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What did Nancy change, what survives of her work, and why is it important now?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Seek a readable fragment or family account and compare it with what Ember has experienced.</p>
+</div>
+<div class="thread-footer">Ember • Brathe • Axiom • Nancy's records</div>
+<a class="btn" href="characters.html#tab-families">Open related page →</a>
+</article>
+<article class="thread-card" id="prisonia" data-category="Actionable lead" data-status="open" data-search="prisonia Prisonia Isle and Arnold Bernard Actionable lead 14 • Destination lead Open An informant placed Flint's former bounty claimant on Prisonia with about 100,000 silver left. Blackwell records, faction documents, a magical cage, and a rumored captive also point there. Is the tip reliable? What evidence and prisoners are there, and how can the crew enter safely? Validate Bernard's location and plan a route. Do not assume the new packet or B-12 key already confirms a Prisonia connection. Flint • Arnold Bernard • Hooded informant locations.html#region-prisonia-fortress">
+<div class="thread-meta">
+<span>14 • Destination lead</span>
+<span>Actionable lead</span>
+<span>Open</span>
+</div>
+<h3>Prisonia Isle and Arnold Bernard</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>An informant placed Flint's former bounty claimant on Prisonia with about 100,000 silver left. Blackwell records, faction documents, a magical cage, and a rumored captive also point there.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Is the tip reliable? What evidence and prisoners are there, and how can the crew enter safely?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Validate Bernard's location and plan a route. Do not assume the new packet or B-12 key already confirms a Prisonia connection.</p>
+</div>
+<div class="thread-footer">Flint • Arnold Bernard • Hooded informant</div>
+<a class="btn" href="locations.html#region-prisonia-fortress">Open related page →</a>
+</article>
+<article class="thread-card" id="lorell" data-category="World &amp; Keepers" data-status="open" data-search="lorell Lorell's school and recovery World &amp; Keepers 15 • Ongoing commitment Open The 500 gp school project is funded and Argyle is building it. Axiom remains Mayor. How is construction progressing? Who can teach, and what do farms, jobs, and the town economy need next? Return for an update or send a concrete instruction through an established contact. Axiom • Argyle • Tabin • Lorell residents locations.html#region-lorell">
+<div class="thread-meta">
+<span>15 • Ongoing commitment</span>
+<span>World &amp; Keepers</span>
+<span>Open</span>
+</div>
+<h3>Lorell's school and recovery</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>The 500 gp school project is funded and Argyle is building it. Axiom remains Mayor.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>How is construction progressing? Who can teach, and what do farms, jobs, and the town economy need next?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Return for an update or send a concrete instruction through an established contact.</p>
+</div>
+<div class="thread-footer">Axiom • Argyle • Tabin • Lorell residents</div>
+<a class="btn" href="locations.html#region-lorell">Open related page →</a>
+</article>
+<article class="thread-card" id="brathe" data-category="Crew &amp; legacy" data-status="open" data-search="brathe Does Brathe join the ship? Crew &amp; legacy 16 • Crew decision Open Brathe offered to serve as blacksmith. Isla considered a trial if Axiom agreed; Brathe boarded without permission and was ordered off in Session 17. Does Axiom consent, and what duties and boundaries would a trial include? Make the decision together. The Session 18 repair order does not automatically make Brathe a crew member. Isla • Axiom • Ember • Brathe characters.html#tab-crew">
+<div class="thread-meta">
+<span>16 • Crew decision</span>
+<span>Crew &amp; legacy</span>
+<span>Open</span>
+</div>
+<h3>Does Brathe join the ship?</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Brathe offered to serve as blacksmith. Isla considered a trial if Axiom agreed; Brathe boarded without permission and was ordered off in Session 17.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Does Axiom consent, and what duties and boundaries would a trial include?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Make the decision together. The Session 18 repair order does not automatically make Brathe a crew member.</p>
+</div>
+<div class="thread-footer">Isla • Axiom • Ember • Brathe</div>
+<a class="btn" href="characters.html#tab-crew">Open related page →</a>
+</article>
+<article class="thread-card" id="living-maps" data-category="World &amp; Keepers" data-status="open" data-search="living-maps Living maps, Brooke, Rhysand, and Magnus World &amp; Keepers 17 • Unfinished map mystery Open Hidden ink links Brooke / B-Ossis, Semper Vita, and Grey More. Siobhan's map legacy, Richard's copies, Brooke's resentment, and Rhysand's story remain unresolved. Which maps can be trusted? Why do accounts conflict, and what remains of the route? Compare the existing fragments and dated accounts. Keep conflicting reports open until there is current evidence. Brooke • Rhysand • Magnus • Ossis family maps.html#loc-semper-vita">
+<div class="thread-meta">
+<span>17 • Unfinished map mystery</span>
+<span>World &amp; Keepers</span>
+<span>Open</span>
+</div>
+<h3>Living maps, Brooke, Rhysand, and Magnus</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Hidden ink links Brooke / B-Ossis, Semper Vita, and Grey More. Siobhan's map legacy, Richard's copies, Brooke's resentment, and Rhysand's story remain unresolved.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Which maps can be trusted? Why do accounts conflict, and what remains of the route?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Compare the existing fragments and dated accounts. Keep conflicting reports open until there is current evidence.</p>
+</div>
+<div class="thread-footer">Brooke • Rhysand • Magnus • Ossis family</div>
+<a class="btn" href="maps.html#loc-semper-vita">Open related page →</a>
+</article>
+<article class="thread-card" id="jun" data-category="Crew &amp; legacy" data-status="open" data-search="jun Jun's blade legacy Crew &amp; legacy 18 • Personal lead Open Jun carries Dashule Lepravonci's blade. Hongbin and the wider legacy still matter; associated relic questions remain unfinished. What does Hongbin know, and what obligations or missing pieces accompany the blade? Follow Jun's established family and relic leads when the crew can make room for them. Jun Taka • Hongbin • Dashule's legacy characters.html#tab-crew">
+<div class="thread-meta">
+<span>18 • Personal lead</span>
+<span>Crew &amp; legacy</span>
+<span>Open</span>
+</div>
+<h3>Jun's blade legacy</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Jun carries Dashule Lepravonci's blade. Hongbin and the wider legacy still matter; associated relic questions remain unfinished.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What does Hongbin know, and what obligations or missing pieces accompany the blade?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Follow Jun's established family and relic leads when the crew can make room for them.</p>
+</div>
+<div class="thread-footer">Jun Taka • Hongbin • Dashule's legacy</div>
+<a class="btn" href="characters.html#tab-crew">Open related page →</a>
+</article>
+<article class="thread-card" id="gutr" data-category="Crew &amp; legacy" data-status="open" data-search="gutr GUTR's twin tails and belonging Crew &amp; legacy 19 • Personal mystery Open GUTR's two tails, old ring, and connection to Bicaudis imagery remain unexplained. What do those symbols mean for his identity and history? Bring the ring and known imagery to someone who can interpret them; give GUTR a chance to choose what family and belonging mean. GUTR characters.html#tab-crew">
+<div class="thread-meta">
+<span>19 • Personal mystery</span>
+<span>Crew &amp; legacy</span>
+<span>Open</span>
+</div>
+<h3>GUTR's twin tails and belonging</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>GUTR's two tails, old ring, and connection to Bicaudis imagery remain unexplained.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What do those symbols mean for his identity and history?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Bring the ring and known imagery to someone who can interpret them; give GUTR a chance to choose what family and belonging mean.</p>
+</div>
+<div class="thread-footer">GUTR</div>
+<a class="btn" href="characters.html#tab-crew">Open related page →</a>
+</article>
+<article class="thread-card" id="ash" data-category="Crew &amp; legacy" data-status="open" data-search="ash Ash, Gideon, and Axiom's transformation Crew &amp; legacy 20 • Origin mystery Open Axiom's human identity was Ash Blackwell. Gideon and Elias Crowe are part of the history behind his transformation and damaged memories. Why was Ash chosen? What did Gideon understand, and where do the missing memories fit? Compare recovered memories with records in established locations; motives and final answers remain unproven. Axiom • Gideon • Elias Crowe characters.html#tab-crew">
+<div class="thread-meta">
+<span>20 • Origin mystery</span>
+<span>Crew &amp; legacy</span>
+<span>Open</span>
+</div>
+<h3>Ash, Gideon, and Axiom's transformation</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Axiom's human identity was Ash Blackwell. Gideon and Elias Crowe are part of the history behind his transformation and damaged memories.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Why was Ash chosen? What did Gideon understand, and where do the missing memories fit?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Compare recovered memories with records in established locations; motives and final answers remain unproven.</p>
+</div>
+<div class="thread-footer">Axiom • Gideon • Elias Crowe</div>
+<a class="btn" href="characters.html#tab-crew">Open related page →</a>
+</article>
+<article class="thread-card" id="finnegan" data-category="Crew &amp; legacy" data-status="open" data-search="finnegan Finnegan's journal and missing-wife clue Crew &amp; legacy 21 • Older unresolved lead Open The early Dolphinia journal and family clue has not received a confirmed resolution. What happened to the woman in Finnegan's family story, and can the crew find reliable evidence? Revisit the journal and the original account when returning to Dolphinia. Finnegan • Dolphinia contacts locations.html#region-dolphinia">
+<div class="thread-meta">
+<span>21 • Older unresolved lead</span>
+<span>Crew &amp; legacy</span>
+<span>Open</span>
+</div>
+<h3>Finnegan's journal and missing-wife clue</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>The early Dolphinia journal and family clue has not received a confirmed resolution.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>What happened to the woman in Finnegan's family story, and can the crew find reliable evidence?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Revisit the journal and the original account when returning to Dolphinia.</p>
+</div>
+<div class="thread-footer">Finnegan • Dolphinia contacts</div>
+<a class="btn" href="locations.html#region-dolphinia">Open related page →</a>
+</article>
+<article class="thread-card" id="vincent-command" data-category="Crew &amp; legacy" data-status="open" data-search="vincent-command Vincent Drake, Isla's father, and his unnamed superior Crew &amp; legacy 22 • Family revelation Open Isla met Vincent Drake, her father, after roughly a century apart. He serves as quartermaster across the Everpass, is acting as Filiorum's authority, and says he answers to someone he did not name. Who does Vincent serve, why did he stay away, and what does he want Isla to understand about his work? Speak with Vincent again and ask directly about his superior, his long absence, and his search for Filiorum's next leader. Isla • Vincent Drake characters.html#tab-regions">
+<div class="thread-meta">
+<span>22 • Family revelation</span>
+<span>Crew &amp; legacy</span>
+<span>Open</span>
+</div>
+<h3>Vincent Drake and his unnamed superior</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Isla met Vincent Drake, her father, after roughly a century apart. He serves as quartermaster across the Everpass, is acting as Filiorum's authority, and says he answers to someone he did not name.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Who does Vincent serve, why did he stay away, and what does he want Isla to understand about his work?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Speak with Vincent again and ask directly about his superior, his long absence, and his search for Filiorum's next leader.</p>
+</div>
+<div class="thread-footer">Isla • Vincent Drake</div>
+<a class="btn" href="characters.html#tab-regions">Open related page →</a>
+</article>
+<article class="thread-card" id="strange-objects" data-category="Actionable lead" data-status="open" data-search="strange-objects The BR ring, yellow orb, and moving chest Actionable lead 23 • Unexplained objects Open A concealed yellow orb was found near a repaired hull breach and was interpreted as a tracking device. The green-gemmed BR ring enables an animal transformation after a long rest, though its full form list and owner are unsettled. A chest in Axiom's room moved toward him during the ring test. Who placed the orb, what are the ring's complete rules, and why did the chest move? Secure each object separately, confirm custody, and test them carefully with the DM. Crew • Axiom • unknown tracker inventory.html">
+<div class="thread-meta">
+<span>23 • Unexplained objects</span>
+<span>Actionable lead</span>
+<span>Open</span>
+</div>
+<h3>The BR ring, yellow orb, and moving chest</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>A concealed yellow orb was found near a repaired hull breach and was interpreted as a tracking device. The green-gemmed BR ring enables an animal transformation after a long rest, though its full form list and owner are unsettled. A chest in Axiom's room moved toward him during the ring test.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Who placed the orb, what are the ring's complete rules, and why did the chest move?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Secure each object separately, confirm custody, and test them carefully with the DM.</p>
+</div>
+<div class="thread-footer">Crew • Axiom • unknown tracker</div>
+<a class="btn" href="inventory.html">Open related page →</a>
+</article>
+<article class="thread-card" id="bossis-poster" data-category="Actionable lead" data-status="open" data-search="bossis-poster The BOSSIS bounty poster Actionable lead 24 • Public clue Open A Filiorum poster offers 50,000 gp for BOSSIS, dead or alive. A separate wanted-alive notice appeared nearby. Earlier campaign records connect B-Ossis with Brooke Ossis, but the poster's issuer and circumstances are unknown. Who posted it, why is the reward so high, and is the target definitely Brooke? Copy the poster details and investigate the issuer before pursuing or warning anyone. Brooke Ossis • Filiorum characters.html#tab-families">
+<div class="thread-meta">
+<span>24 • Public clue</span>
+<span>Actionable lead</span>
+<span>Open</span>
+</div>
+<h3>The BOSSIS bounty poster</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>A Filiorum poster offers 50,000 gp for BOSSIS, dead or alive. A separate wanted-alive notice appeared nearby. Earlier campaign records connect B-Ossis with Brooke Ossis, but the poster's issuer and circumstances are unknown.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>Who posted it, why is the reward so high, and is the target definitely Brooke?</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Copy the poster details and investigate the issuer before pursuing or warning anyone.</p>
+</div>
+<div class="thread-footer">Brooke Ossis • Filiorum</div>
+<a class="btn" href="characters.html#tab-families">Open related page →</a>
+</article>
+<article class="thread-card" id="fred-recovered" data-category="Resolved moments" data-status="resolved" data-search="fred-recovered Fred recovered from the dock battle Resolved moments Session 19 result Resolved moment Fred survived the Session 18 fight. By Session 19 he had been healed and was walking and talking. The immediate uncertainty about his survival is closed. Continue to track ordinary crew readiness with the ship ledger. Fred • Schmelly • crew characters.html#tab-crew">
+<div class="thread-meta">
+<span>Session 19 result</span>
+<span>Resolved moments</span>
+<span>Resolved moment</span>
+</div>
+<h3>Fred recovered from the dock battle</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>Fred survived the Session 18 fight. By Session 19 he had been healed and was walking and talking.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>The immediate uncertainty about his survival is closed.</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Continue to track ordinary crew readiness with the ship ledger.</p>
+</div>
+<div class="thread-footer">Fred • Schmelly • crew</div>
+<a class="btn" href="characters.html#tab-crew">Open related page →</a>
+</article>
+<article class="thread-card" id="wave-stopped" data-category="Resolved moments" data-status="resolved" data-search="wave-stopped The immediate tsunami escape Resolved moments Session 18 result Resolved moment The Bag of Winds pushed the tsunami and Marica away, allowing the Tempest's Mercy to survive and head back toward Filiorum. The wave's immediate threat was overcome. Marica's motives, the earthquake, town damage, and ship repairs are still tracked separately. Use this as the completed milestone; continue the related open threads above. Ember • Axiom • Kaelis • Crew sessions.html?session=18#s18-recap">
+<div class="thread-meta">
+<span>Session 18 result</span>
+<span>Resolved moments</span>
+<span>Resolved moment</span>
+</div>
+<h3>The immediate tsunami escape</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>The Bag of Winds pushed the tsunami and Marica away, allowing the Tempest's Mercy to survive and head back toward Filiorum.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>The wave's immediate threat was overcome. Marica's motives, the earthquake, town damage, and ship repairs are still tracked separately.</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Use this as the completed milestone; continue the related open threads above.</p>
+</div>
+<div class="thread-footer">Ember • Axiom • Kaelis • Crew</div>
+<a class="btn" href="sessions.html?session=18#s18-recap">Open related page →</a>
+</article>
+<article class="thread-card" id="dock-victory" data-category="Resolved moments" data-status="resolved" data-search="dock-victory The recorded dock fight Resolved moments Session 18 result Resolved moment The final enemies were killed and loot rolls followed. The local combat ended. The Fleet conflict and harbor consequences remain open even though this battle was won. Recover, inspect the ship, and follow the packet and key. Tempest Vanguard sessions.html?session=18#s18-loot">
+<div class="thread-meta">
+<span>Session 18 result</span>
+<span>Resolved moments</span>
+<span>Resolved moment</span>
+</div>
+<h3>The recorded dock fight</h3>
+<div class="thread-field">
+<b>What we know</b>
+<p>The final enemies were killed and loot rolls followed. The local combat ended.</p>
+</div>
+<div class="thread-field">
+<b>Still unanswered</b>
+<p>The Fleet conflict and harbor consequences remain open even though this battle was won.</p>
+</div>
+<div class="thread-field">
+<b>A next step</b>
+<p>Recover, inspect the ship, and follow the packet and key.</p>
+</div>
+<div class="thread-footer">Tempest Vanguard</div>
+<a class="btn" href="sessions.html?session=18#s18-loot">Open related page →</a>
+</article>
+</div>
+<p class="empty-threads" id="threadEmpty" hidden>No storylines match these filters.</p>
+</section>
+<div class="footer">THE CALLING OF THE SEA • PLAYER STORYLINE REGISTER • THROUGH SESSION 19</div>
+</main><script>
 const threadCards=[...document.querySelectorAll('.thread-card')],threadSearch=document.getElementById('threadSearch'),threadCategory=document.getElementById('threadCategory'),threadStatus=document.getElementById('threadStatus');
 function filterThreads(){const words=threadSearch.value.toLowerCase().trim().split(/\s+/).filter(Boolean);let count=0;threadCards.forEach(card=>{const visible=words.every(w=>card.dataset.search.toLowerCase().includes(w))&&(threadCategory.value==='all'||card.dataset.category===threadCategory.value)&&(threadStatus.value==='all'||card.dataset.status===threadStatus.value);card.hidden=!visible;if(visible)count++;});document.getElementById('threadCount').textContent=`${count} of ${threadCards.length} storylines shown`;document.getElementById('threadEmpty').hidden=count!==0;}
 [threadSearch,threadCategory,threadStatus].forEach(x=>x.addEventListener(x===threadSearch?'input':'change',filterThreads));
 function revealHash(){const card=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(card?.classList.contains('thread-card')){threadStatus.value=card.dataset.status;threadCategory.value='all';threadSearch.value='';filterThreads();requestAnimationFrame(()=>card.scrollIntoView({block:'start'}));}}
 filterThreads();revealHash();window.addEventListener('hashchange',revealHash);
-</script><script defer src="table_chat.js?v=deckhand-canon-5"></script></body></html>
+</script><script defer src="table_chat.js?v=deckhand-canon-5"></script></body>
+</html>
